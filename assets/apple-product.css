@@ -1,0 +1,107 @@
+/* Book Plume — product page skin.
+   Pure CSS over Dawn's product template; no template logic touched. */
+
+/* Vendor eyebrow */
+.product__text.caption-with-letter-spacing {
+  font-family: 'IBM Plex Mono', 'Inter', monospace;
+  font-size: 1.15rem;
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+  margin-bottom: 0.8rem;
+}
+
+/* Title */
+.product__title h1,
+.product__title .h1 {
+  font-family: var(--font-heading-family);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+}
+
+/* Price */
+.price--large {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.product__tax {
+  opacity: 0.6;
+  font-size: 1.25rem;
+}
+
+/* Quantity pill */
+.product-form__input .quantity {
+  border-radius: 100px;
+}
+
+/* Readable description — tames long imported copy */
+.product__description {
+  max-width: 62ch;
+  font-size: 1.5rem;
+  line-height: 1.65;
+}
+
+.product__description p {
+  margin: 0 0 1.4rem;
+}
+
+.product__description ul {
+  padding-left: 1.8rem;
+  margin: 0 0 1.6rem;
+}
+
+.product__description li {
+  margin-bottom: 0.9rem;
+  padding-left: 0.3rem;
+}
+
+.product__description li::marker {
+  color: rgb(var(--color-secondary-button));
+}
+
+.product__description strong,
+.product__description b {
+  font-weight: 600;
+}
+
+.product__description h1,
+.product__description h2,
+.product__description h3 {
+  font-family: var(--font-heading-family);
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin: 2.4rem 0 1rem;
+}
+
+/* Share link — quieter */
+.share-button__button {
+  font-size: 1.3rem;
+  opacity: 0.7;
+}
+
+.share-button__button:hover {
+  opacity: 1;
+}
+
+/* Accordion */
+.product__accordion summary {
+  padding-block: 1.5rem;
+}
+
+.product__accordion .accordion__title {
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+
+product-info .rating-star {
+  color: rgb(var(--color-secondary-button));
+}
+
+/* Media frame */
+.product__media-wrapper .media {
+  border-radius: 16px;
+  overflow: hidden;
+}
