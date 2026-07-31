@@ -1,0 +1,30 @@
+/* Book Plume — Apple-style collection page skin.
+   Pure CSS over Dawn's collection banner, facets, and product grid. */
+
+.collection-hero__title {
+  font-family: var(--font-heading-family);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.collection-hero__description {
+  opacity: 0.75;
+}
+
+.facet-filters__label {
+  font-family: 'IBM Plex Mono', 'Inter', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.facet-filters__sort,
+.facets select,
+.facets .select {
+  border-radius: 100px;
+}
+
+.product-count__text {
+  opacity: 0.6;
+}

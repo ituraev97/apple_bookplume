@@ -1,6 +1,6 @@
 /* Book Plume — Apple-style skin for product & collection cards.
-   Pure CSS on top of Dawn's existing card markup — no template
-   logic touched, so quick-add / bulk / badges keep working as-is. */
+   Accent colour is --color-secondary-button-text (Dawn maps
+   --color-secondary-button to the background, not the accent). */
 
 .card__media {
   overflow: hidden;
@@ -35,7 +35,7 @@
 }
 
 .card .price .price-item--sale {
-  color: rgb(var(--color-secondary-button));
+  color: rgb(var(--color-secondary-button-text));
 }
 
 .card-wrapper .quick-add__submit {
@@ -43,7 +43,7 @@
   letter-spacing: 0;
 }
 
-/* --- Round category tiles (Yepoda-style circles) --- */
+/* --- Round category tiles --- */
 .section-collection-list .card__inner,
 .section-collection-list .card__media,
 .section-collection-list .card--media .card__inner {
