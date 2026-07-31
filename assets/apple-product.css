@@ -1,4 +1,5 @@
 /* Book Plume — product page skin.
+   Pure CSS over Dawn's product template; no template logic touched.
    Accent colour lives in --color-secondary-button-text (Dawn maps
    --color-secondary-button to the background, not the accent). */
 
@@ -37,68 +38,6 @@
   border-radius: 100px;
 }
 
-.quantity__button svg {
-  width: 15px;
-  height: 15px;
-}
-
-/* --- Buy box buttons --- */
-
-/* Add to cart — Dawn renders it as a secondary button when dynamic
-   checkout is on, which would be cream-on-cream. Force it solid. */
-.product-form__submit {
-  background: rgb(var(--color-foreground)) !important;
-  color: rgb(var(--color-background)) !important;
-  border: 0 !important;
-  border-radius: 100px !important;
-  font-size: 1.5rem !important;
-  font-weight: 500 !important;
-  letter-spacing: 0 !important;
-  min-height: 5.2rem;
-  box-shadow: none !important;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.product-form__submit::after,
-.product-form__submit::before {
-  display: none !important;
-}
-
-.product-form__submit:hover:not([disabled]) {
-  opacity: 0.88;
-  transform: translateY(-1px);
-}
-
-.product-form__submit[disabled] {
-  opacity: 0.4;
-}
-
-/* Shopify dynamic checkout (Buy with Shop) */
-.shopify-payment-button__button--unbranded {
-  border-radius: 100px !important;
-  min-height: 5.2rem;
-  font-weight: 500 !important;
-}
-
-.shopify-payment-button__button {
-  border-radius: 100px !important;
-  min-height: 5.2rem;
-}
-
-.shopify-payment-button {
-  margin-top: 1rem;
-}
-
-.shopify-payment-button__more-options {
-  font-size: 1.3rem;
-  opacity: 0.65;
-  margin-top: 1.2rem;
-}
-
-.shopify-payment-button__more-options:hover {
-  opacity: 1;
-}
-
 /* Description — clamped to a preview height, expanded via More / Less */
 .product__description {
   max-width: 62ch;
@@ -126,12 +65,11 @@
 }
 
 .bp-desc__toggle {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
-  margin: 1.6rem auto 0;
-  padding: 1rem 2.4rem;
+  margin-top: 1.4rem;
+  padding: 0.9rem 1.8rem;
   font-family: var(--font-body-family);
   font-size: 1.4rem;
   font-weight: 500;
