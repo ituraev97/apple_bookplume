@@ -1,5 +1,7 @@
 /* Book Plume — product page skin.
-   Pure CSS over Dawn's product template; no template logic touched. */
+   Pure CSS over Dawn's product template; no template logic touched.
+   Accent colour lives in --color-secondary-button-text (Dawn maps
+   --color-secondary-button to the background, not the accent). */
 
 /* Vendor eyebrow */
 .product__text.caption-with-letter-spacing {
@@ -66,15 +68,22 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  margin-top: 1.2rem;
+  margin-top: 1.4rem;
+  padding: 0.9rem 1.8rem;
   font-family: var(--font-body-family);
   font-size: 1.4rem;
   font-weight: 500;
-  color: rgb(var(--color-secondary-button));
+  color: rgb(var(--color-secondary-button-text));
   background: none;
-  border: 0;
-  padding: 0;
+  border: 1px solid rgba(var(--color-secondary-button-text), 0.35);
+  border-radius: 100px;
   cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.bp-desc__toggle:hover {
+  background: rgba(var(--color-secondary-button-text), 0.07);
+  border-color: rgba(var(--color-secondary-button-text), 0.6);
 }
 
 .bp-desc__toggle[hidden] {
@@ -106,7 +115,7 @@
 }
 
 .product__description li::marker {
-  color: rgb(var(--color-secondary-button));
+  color: rgb(var(--color-secondary-button-text));
 }
 
 .product__description strong,
@@ -145,7 +154,7 @@
 }
 
 product-info .rating-star {
-  color: rgb(var(--color-secondary-button));
+  color: rgb(var(--color-secondary-button-text));
 }
 
 /* Media frame */
