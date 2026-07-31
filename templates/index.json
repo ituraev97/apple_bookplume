@@ -56,58 +56,65 @@
         "show_text_below": false
       }
     },
-    "collection_categories": {
-      "type": "collection-list",
+    "category_tiles": {
+      "type": "category-tiles",
       "blocks": {
-        "cat_1": {
-          "type": "featured_collection",
+        "t1": {
+          "type": "tile",
           "settings": {
-            "collection": "anatomy-education"
+            "collection": "anatomy-education",
+            "label": "Anatomy & medical",
+            "art": "anatomy"
           }
         },
-        "cat_2": {
-          "type": "featured_collection",
+        "t2": {
+          "type": "tile",
           "settings": {
-            "collection": "stress-relief-coloring"
+            "collection": "stress-relief-coloring",
+            "label": "Coloring & journals",
+            "art": "coloring"
           }
         },
-        "cat_3": {
-          "type": "featured_collection",
+        "t3": {
+          "type": "tile",
           "settings": {
-            "collection": "bible-christian-trivia"
+            "collection": "bible-christian-trivia",
+            "label": "Bible & faith",
+            "art": "bible"
           }
         },
-        "cat_4": {
-          "type": "featured_collection",
+        "t4": {
+          "type": "tile",
           "settings": {
-            "collection": "libros-en-espanol"
+            "collection": "libros-en-espanol",
+            "label": "Libros en Español",
+            "art": "spanish"
           }
         },
-        "cat_5": {
-          "type": "featured_collection",
+        "t5": {
+          "type": "tile",
           "settings": {
-            "collection": "boxed-sets-series"
+            "collection": "boxed-sets-series",
+            "label": "Boxed sets",
+            "art": "boxed"
           }
         }
       },
       "block_order": [
-        "cat_1",
-        "cat_2",
-        "cat_3",
-        "cat_4",
-        "cat_5"
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h2",
-        "image_ratio": "square",
+        "title": "Shop by category",
+        "heading_size": "h1",
         "columns_desktop": 5,
+        "show_count": true,
         "color_scheme": "scheme-1",
-        "show_view_all": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 48,
-        "padding_bottom": 24
+        "padding_top": 56,
+        "padding_bottom": 48
       }
     },
     "featured_bestsellers": {
@@ -121,7 +128,7 @@
         "collection": "bestsellers",
         "products_to_show": 10,
         "columns_desktop": 5,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "link",
@@ -134,8 +141,8 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
-        "padding_top": 32,
-        "padding_bottom": 44
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     },
     "trust_bar": {
@@ -177,7 +184,7 @@
         "columns_desktop": 3,
         "column_alignment": "center",
         "background_style": "none",
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-5",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 40,
@@ -191,21 +198,21 @@
           "type": "column",
           "settings": {
             "title": "480+",
-            "text": "<p>Titles in stock<br>Study guides, coloring books, Bibles and more.</p>"
+            "text": "<p>Titles in stock \u2014 study guides, coloring books, Bibles and more.</p>"
           }
         },
         "stat_2": {
           "type": "column",
           "settings": {
             "title": "10",
-            "text": "<p>Curated categories<br>Hand-sorted so you find the right book faster.</p>"
+            "text": "<p>Curated categories, hand-sorted so you find the right book faster.</p>"
           }
         },
         "stat_3": {
           "type": "column",
           "settings": {
             "title": "2",
-            "text": "<p>Languages<br>English and Spanish editions, side by side.</p>"
+            "text": "<p>Languages \u2014 English and Spanish editions, side by side.</p>"
           }
         }
       },
@@ -227,8 +234,8 @@
         "color_scheme": "scheme-1",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 56,
-        "padding_bottom": 56
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "featured_collection": {
@@ -242,7 +249,7 @@
         "collection": "all",
         "products_to_show": 10,
         "columns_desktop": 5,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "link",
@@ -255,14 +262,14 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 60
+        "padding_top": 52,
+        "padding_bottom": 64
       }
     }
   },
   "order": [
     "image_banner",
-    "collection_categories",
+    "category_tiles",
     "featured_bestsellers",
     "trust_bar",
     "stats",
