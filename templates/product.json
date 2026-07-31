@@ -55,6 +55,12 @@
           "type": "description",
           "settings": {}
         },
+        "description_toggle": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'product-description-toggle' %}"
+          }
+        },
         "share": {
           "type": "share",
           "settings": {
@@ -71,6 +77,7 @@
         "buy_buttons",
         "promo_inline",
         "description",
+        "description_toggle",
         "share"
       ],
       "settings": {
