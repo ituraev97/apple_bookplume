@@ -45,6 +45,12 @@
             "show_gift_card_recipient": true
           }
         },
+        "promo_inline": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'product-promo-banner' %}"
+          }
+        },
         "description": {
           "type": "description",
           "settings": {}
@@ -63,6 +69,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "promo_inline",
         "description",
         "share"
       ],
@@ -125,10 +132,10 @@
         "b4"
       ],
       "settings": {
-        "promo_badge": "-10%",
-        "promo_title": "Buy any 3 books, save 10%",
-        "promo_sub": "Discount applies automatically at checkout \u2014 no code needed.",
-        "promo_link": "shopify://collections/all",
+        "promo_badge": "",
+        "promo_title": "",
+        "promo_sub": "",
+        "promo_link": "",
         "promo_bg": "#B23A2E",
         "promo_text": "#FAFAF8",
         "icon_bg": "#E5DFD2",
