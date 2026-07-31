@@ -1,0 +1,45 @@
+{%- comment -%}
+  Book Plume — More / Less toggle for the product description.
+  Rendered via a custom_liquid block placed directly after the
+  description block, so the markup is guaranteed to be in the DOM.
+{%- endcomment -%}
+
+<button type="button" class="bp-desc__toggle" aria-expanded="false" hidden>
+  <span class="bp-desc__toggle-label">More</span>
+  <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+</button>
+
+<script>
+  (function () {
+    var script = document.currentScript;
+    var toggle = script.previousElementSibling;
+    while (toggle && !toggle.classList.contains('bp-desc__toggle')) {
+      toggle = toggle.previousElementSibling;
+    }
+    if (!toggle) return;
+
+    var desc = toggle.previousElementSibling;
+    while (desc && !desc.classList.contains('product__description')) {
+      desc = desc.previousElementSibling;
+    }
+    if (!desc) return;
+
+    function measure() {
+      var overflows = desc.scrollHeight > desc.clientHeight + 4;
+      toggle.hidden = !overflows;
+      desc.classList.toggle('bp-desc--clamped', overflows);
+    }
+
+    toggle.addEventListener('click', function () {
+      var expanded = desc.classList.toggle('bp-desc--expanded');
+      toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      toggle.querySelector('.bp-desc__toggle-label').textContent = expanded ? 'Less' : 'More';
+    });
+
+    measure();
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(measure);
+    }
+    window.addEventListener('load', measure);
+  })();
+</script>
