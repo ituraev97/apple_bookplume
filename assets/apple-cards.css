@@ -1,0 +1,82 @@
+/* Book Plume — Apple-style skin for product & collection cards.
+   Pure CSS on top of Dawn's existing card markup — no template
+   logic touched, so quick-add / bulk / badges keep working as-is. */
+
+.card__media {
+  overflow: hidden;
+}
+
+.card__media img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .card__media img {
+  transform: scale(1.035);
+}
+
+.card__heading {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.card__badge .badge {
+  font-family: 'IBM Plex Mono', 'Inter', sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding-block: 0.5rem;
+}
+
+.card .price {
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.card .price .price-item--sale {
+  color: rgb(var(--color-secondary-button));
+}
+
+.card-wrapper .quick-add__submit {
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* --- Round category tiles (Yepoda-style circles) --- */
+.section-collection-list .card__inner,
+.section-collection-list .card__media,
+.section-collection-list .card--media .card__inner {
+  border-radius: 50% !important;
+  overflow: hidden;
+}
+
+.section-collection-list .card {
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.section-collection-list .card__content {
+  text-align: center;
+}
+
+.section-collection-list .card__heading {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+
+.section-collection-list .card__inner {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-collection-list .card-wrapper:hover .card__inner {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card__media img,
+  .section-collection-list .card__inner {
+    transition: none;
+  }
+}
