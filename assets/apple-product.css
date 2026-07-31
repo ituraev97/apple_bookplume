@@ -36,37 +36,39 @@
   border-radius: 100px;
 }
 
-/* Collapsible description — More / Less instead of a wall of text */
+/* Description — clamped to a preview height, expanded via More / Less */
 .product__description {
   max-width: 62ch;
   font-size: 1.5rem;
   line-height: 1.65;
   position: relative;
-  max-height: 14.5em;
+  max-height: 15em;
   overflow: hidden;
 }
 
 .product__description.bp-desc--expanded {
   max-height: none;
+  overflow: visible;
 }
 
-.product__description:not(.bp-desc--expanded)::after {
+.product__description.bp-desc--clamped:not(.bp-desc--expanded)::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 4.5em;
-  background: linear-gradient(to bottom, rgba(var(--color-background), 0) 0%, rgb(var(--color-background)) 85%);
+  height: 5em;
+  background: linear-gradient(to bottom, rgba(var(--color-background), 0) 0%, rgb(var(--color-background)) 88%);
   pointer-events: none;
 }
 
 .bp-desc__toggle {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
   margin-top: 1.2rem;
-  font-size: 1.35rem;
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
   font-weight: 500;
   color: rgb(var(--color-secondary-button));
   background: none;
@@ -75,13 +77,17 @@
   cursor: pointer;
 }
 
+.bp-desc__toggle[hidden] {
+  display: none;
+}
+
 .bp-desc__toggle svg {
   width: 12px;
   height: 12px;
   transition: transform 0.2s ease;
 }
 
-.bp-desc__toggle[aria-expanded="true"] svg {
+.bp-desc__toggle[aria-expanded='true'] svg {
   transform: rotate(180deg);
 }
 
