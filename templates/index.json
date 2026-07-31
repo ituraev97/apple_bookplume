@@ -44,35 +44,34 @@
         "button"
       ],
       "settings": {
-        "image_overlay_opacity": 30,
-        "image_height": "large",
-        "desktop_content_position": "middle-center",
-        "show_text_box": false,
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
         "image_behavior": "none",
+        "desktop_content_position": "middle-center",
         "desktop_content_alignment": "center",
+        "show_text_box": false,
         "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
         "show_text_below": false
       }
     },
     "featured_bestsellers": {
       "type": "featured-collection",
       "settings": {
+        "collection": "bestsellers",
+        "products_to_show": 10,
         "title": "Bestsellers",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "bestsellers",
-        "products_to_show": 10,
         "columns_desktop": 5,
-        "color_scheme": "scheme-1",
+        "enable_desktop_slider": true,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "link",
-        "enable_desktop_slider": true,
-        "swipe_on_mobile": true,
+        "color_scheme": "scheme-1",
         "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": false,
@@ -80,6 +79,7 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": true,
         "padding_top": 52,
         "padding_bottom": 52
       }
@@ -138,7 +138,6 @@
       "settings": {
         "title": "Shop by category",
         "heading_size": "h1",
-        "columns_desktop": 5,
         "show_count": true,
         "color_scheme": "scheme-2",
         "padding_top": 56,
@@ -152,14 +151,14 @@
           "type": "column",
           "settings": {
             "title": "Fast US shipping",
-            "text": "<p>Orders ship from Brooklyn, NY within 1\u20132 business days.</p>"
+            "text": "<p>Orders ship from Brooklyn, NY within 1–2 business days.</p>"
           }
         },
         "trust_2": {
           "type": "column",
           "settings": {
             "title": "Easy returns",
-            "text": "<p>Not the right fit? Send it back \u2014 see our return policy for details.</p>"
+            "text": "<p>Not the right fit? Send it back — see our return policy for details.</p>"
           }
         },
         "trust_3": {
@@ -198,7 +197,7 @@
           "type": "column",
           "settings": {
             "title": "480+",
-            "text": "<p>Titles in stock \u2014 study guides, coloring books, Bibles and more.</p>"
+            "text": "<p>Titles in stock — study guides, coloring books, Bibles and more.</p>"
           }
         },
         "stat_2": {
@@ -212,7 +211,7 @@
           "type": "column",
           "settings": {
             "title": "2",
-            "text": "<p>Languages \u2014 English and Spanish editions, side by side.</p>"
+            "text": "<p>Languages — English and Spanish editions, side by side.</p>"
           }
         }
       },
@@ -241,20 +240,19 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
+        "collection": "all",
+        "products_to_show": 10,
         "title": "New arrivals",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
-        "products_to_show": 10,
         "columns_desktop": 5,
-        "color_scheme": "scheme-2",
+        "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "link",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "color_scheme": "scheme-2",
         "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": false,
@@ -262,6 +260,7 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 52,
         "padding_bottom": 64
       }
