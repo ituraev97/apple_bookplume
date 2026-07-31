@@ -1,0 +1,181 @@
+/* Book Plume — footer skin: accordion menus on mobile, tidy columns on desktop. */
+
+.footer {
+  border-top: 1px solid rgba(var(--color-foreground), 0.1);
+}
+
+.footer__content-top {
+  padding-bottom: 0;
+}
+
+/* Newsletter lead-in */
+.footer-block--newsletter {
+  max-width: 52rem;
+  margin: 0 0 4rem;
+}
+
+.footer-block__newsletter .footer-block__heading {
+  font-family: var(--font-heading-family);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  text-transform: none;
+  opacity: 1;
+  margin-bottom: 2rem;
+  max-width: 22ch;
+}
+
+.footer .newsletter-form__field-wrapper .field {
+  border-radius: 100px;
+}
+
+.footer .newsletter-form__button {
+  border-radius: 100px;
+}
+
+/* Accordion menus */
+.bp-facc {
+  border-top: 1px solid rgba(var(--color-foreground), 0.12);
+}
+
+.bp-facc > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+  padding: 1.8rem 0;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-heading-family);
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+
+.bp-facc > summary::-webkit-details-marker {
+  display: none;
+}
+
+.bp-facc__icon {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.bp-facc__icon::before,
+.bp-facc__icon::after {
+  content: '';
+  position: absolute;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.bp-facc__icon::before {
+  top: 6px;
+  left: 0;
+  width: 14px;
+  height: 2px;
+}
+
+.bp-facc__icon::after {
+  top: 0;
+  left: 6px;
+  width: 2px;
+  height: 14px;
+}
+
+.bp-facc[open] .bp-facc__icon::after {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+.bp-facc__panel {
+  padding-bottom: 1.6rem;
+  margin: 0;
+  list-style: none;
+}
+
+.bp-facc__panel li {
+  margin-bottom: 1rem;
+}
+
+.bp-facc__panel a {
+  font-size: 1.4rem;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.bp-facc__panel a:hover {
+  opacity: 1;
+}
+
+/* Desktop: always-open columns, no toggles */
+@media screen and (min-width: 750px) {
+  .bp-facc {
+    border-top: 0;
+  }
+
+  .bp-facc > summary {
+    padding: 0 0 1.6rem;
+    cursor: default;
+    pointer-events: none;
+    font-family: 'IBM Plex Mono', 'Inter', monospace;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    opacity: 0.55;
+  }
+
+  .bp-facc__icon {
+    display: none;
+  }
+
+  .bp-facc:not([open]) > .bp-facc__panel {
+    display: block;
+  }
+}
+
+/* Bottom row — payment icons, copyright, policies */
+.footer__content-bottom {
+  border-top: 1px solid rgba(var(--color-foreground), 0.12);
+  margin-top: 3.2rem;
+  padding-top: 2.4rem;
+}
+
+.footer__content-bottom-wrapper {
+  align-items: center;
+}
+
+.footer__payment {
+  margin: 0;
+}
+
+.footer .list-payment__item svg {
+  height: 22px;
+  width: auto;
+}
+
+.footer__copyright {
+  opacity: 0.55;
+  font-size: 1.2rem;
+}
+
+.footer__copyright .policies {
+  gap: 1.6rem;
+}
+
+.footer .policies a {
+  opacity: 0.75;
+}
+
+.footer .policies a:hover {
+  opacity: 1;
+}
+
+.footer__list-social {
+  gap: 0.4rem;
+}
