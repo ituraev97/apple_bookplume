@@ -1,6 +1,6 @@
 {%- comment -%}
   Book Plume — category tiles with built-in vector illustrations.
-  Horizontally scrollable rail; no image upload needed.
+  Horizontally scrollable rail; Matcha + Banana palette.
 {%- endcomment -%}
 
 {%- style -%}
@@ -22,18 +22,12 @@
     scrollbar-color: rgba(var(--color-foreground), 0.2) transparent;
   }
 
-  .bp-cats__rail::-webkit-scrollbar {
-    height: 4px;
-  }
-
+  .bp-cats__rail::-webkit-scrollbar { height: 4px; }
   .bp-cats__rail::-webkit-scrollbar-thumb {
     background: rgba(var(--color-foreground), 0.18);
     border-radius: 4px;
   }
-
-  .bp-cats__rail::-webkit-scrollbar-track {
-    background: transparent;
-  }
+  .bp-cats__rail::-webkit-scrollbar-track { background: transparent; }
 
   .bp-cats__item {
     flex: 0 0 auto;
@@ -54,15 +48,9 @@
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .bp-cats__art svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
+  .bp-cats__art svg { display: block; width: 100%; height: 100%; }
 
-  .bp-cats__item a:hover .bp-cats__art {
-    transform: translateY(-4px);
-  }
+  .bp-cats__item a:hover .bp-cats__art { transform: translateY(-4px); }
 
   .bp-cats__label {
     margin: 1rem 0 0;
@@ -83,23 +71,12 @@
     margin-top: 0.3rem;
   }
 
-  .bp-cats__heading {
-    margin: 0 0 2.4rem;
-  }
+  .bp-cats__heading { margin: 0 0 2.4rem; }
 
   @media screen and (min-width: 750px) {
-    .bp-cats__rail {
-      gap: 2rem;
-      padding-inline: 5rem;
-    }
-
-    .bp-cats__item {
-      width: {{ section.settings.tile_size | plus: 40 }}px;
-    }
-
-    .bp-cats__label {
-      font-size: 1.5rem;
-    }
+    .bp-cats__rail { gap: 2rem; padding-inline: 5rem; }
+    .bp-cats__item { width: {{ section.settings.tile_size | plus: 40 }}px; }
+    .bp-cats__label { font-size: 1.5rem; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -124,74 +101,74 @@
             {%- case block.settings.art -%}
               {%- when 'anatomy' -%}
                 <svg viewBox="0 0 200 200" role="img" aria-label="Anatomy and medical study books">
-                  <rect width="200" height="200" fill="#B23A2E"/>
-                  <circle cx="148" cy="46" r="58" fill="#C1503F"/>
-                  <g stroke="#FAFAF8" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="200" height="200" fill="#5C7A2F"/>
+                  <circle cx="148" cy="46" r="58" fill="#6E8F3C"/>
+                  <g stroke="#F7FBEE" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M100 40C78 40 64 57 64 77c0 15 8 22 8 34h56c0-12 8-19 8-34 0-20-14-37-36-37Z"/>
-                    <circle cx="86" cy="75" r="7" fill="#FAFAF8"/>
-                    <circle cx="114" cy="75" r="7" fill="#FAFAF8"/>
+                    <circle cx="86" cy="75" r="7" fill="#F2D14E" stroke="none"/>
+                    <circle cx="114" cy="75" r="7" fill="#F2D14E" stroke="none"/>
                     <path d="M93 92l7 9 7-9"/>
                     <path d="M72 119h56M80 119v42M120 119v42M80 132h40M80 146h40M80 160h40"/>
                   </g>
                 </svg>
               {%- when 'coloring' -%}
                 <svg viewBox="0 0 200 200" role="img" aria-label="Coloring books and journals">
-                  <rect width="200" height="200" fill="#EFEADF"/>
-                  <circle cx="36" cy="170" r="52" fill="#E4DED0"/>
-                  <g fill="none" stroke="#B23A2E" stroke-width="3.2" stroke-linecap="round">
+                  <rect width="200" height="200" fill="#F2D14E"/>
+                  <circle cx="36" cy="170" r="52" fill="#E7C13A"/>
+                  <g fill="none" stroke="#5C7A2F" stroke-width="3.4" stroke-linecap="round">
                     <circle cx="100" cy="92" r="17"/>
                     <path d="M100 75c0-26-25-30-31-15-6 15 13 21 31 15Z"/>
                     <path d="M100 75c0-26 25-30 31-15 6 15-13 21-31 15Z"/>
                     <path d="M100 109c0 26-25 30-31 15-6-15 13-21 31-15Z"/>
                     <path d="M100 109c0 26 25 30 31 15 6-15-13-21-31-15Z"/>
                   </g>
-                  <g fill="none" stroke="#111110" stroke-width="3.2" stroke-linecap="round">
+                  <g fill="none" stroke="#1F2A14" stroke-width="3.4" stroke-linecap="round">
                     <path d="M83 92c-26 0-30-25-15-31"/>
                     <path d="M117 92c26 0 30 25 15 31"/>
                     <path d="M44 152c19-13 34 2 46-6 12-8 27 7 46-4"/>
                   </g>
-                  <circle cx="100" cy="92" r="6" fill="#111110"/>
+                  <circle cx="100" cy="92" r="6" fill="#1F2A14"/>
                 </svg>
               {%- when 'bible' -%}
                 <svg viewBox="0 0 200 200" role="img" aria-label="Bible and faith books">
-                  <rect width="200" height="200" fill="#111110"/>
-                  <circle cx="100" cy="58" r="46" fill="#1C1B19"/>
-                  <g stroke="#FAFAF8" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="200" height="200" fill="#1F2A14"/>
+                  <circle cx="100" cy="58" r="46" fill="#2B3A1C"/>
+                  <g stroke="#F7FBEE" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M100 40v46M79 60h42"/>
                     <path d="M42 116c15-9 36-9 58 0 22-9 43-9 58 0v44c-15-9-36-9-58 0-22-9-43-9-58 0Z"/>
                     <path d="M100 116v44"/>
                   </g>
-                  <circle cx="100" cy="28" r="6" fill="#B23A2E"/>
+                  <circle cx="100" cy="28" r="6" fill="#F2D14E"/>
                 </svg>
               {%- when 'spanish' -%}
                 <svg viewBox="0 0 200 200" role="img" aria-label="Spanish language books">
-                  <rect width="200" height="200" fill="#E5DFD2"/>
-                  <path d="M0 200 L200 60 L200 200Z" fill="#DCD5C5"/>
-                  <g stroke="#111110" stroke-width="3.2" fill="none" stroke-linejoin="round">
-                    <rect x="40" y="52" width="78" height="74" rx="4" fill="#FAFAF8"/>
-                    <path d="M40 52v74" stroke="#B23A2E" stroke-width="9"/>
+                  <rect width="200" height="200" fill="#E6E3CF"/>
+                  <path d="M0 200 L200 60 L200 200Z" fill="#DAD6BE"/>
+                  <g stroke="#1F2A14" stroke-width="3.2" fill="none" stroke-linejoin="round">
+                    <rect x="40" y="52" width="78" height="74" rx="4" fill="#F7FBEE"/>
+                    <path d="M40 52v74" stroke="#5C7A2F" stroke-width="9"/>
                     <path d="M58 74h44M58 89h44M58 104h26" stroke-linecap="round"/>
                   </g>
-                  <path d="M104 128h56v34h-16l-10 12v-12h-30Z" fill="#B23A2E"/>
-                  <text x="132" y="151" text-anchor="middle" fill="#FAFAF8" font-family="system-ui, sans-serif" font-size="16" font-weight="600">Hola</text>
+                  <path d="M104 128h56v34h-16l-10 12v-12h-30Z" fill="#F2D14E"/>
+                  <text x="132" y="151" text-anchor="middle" fill="#2A2410" font-family="system-ui, sans-serif" font-size="16" font-weight="700">Hola</text>
                 </svg>
               {%- when 'boxed' -%}
                 <svg viewBox="0 0 200 200" role="img" aria-label="Boxed sets and series">
-                  <rect width="200" height="200" fill="#4A4642"/>
-                  <circle cx="166" cy="172" r="56" fill="#565149"/>
+                  <rect width="200" height="200" fill="#2B3A1C"/>
+                  <circle cx="166" cy="172" r="56" fill="#354826"/>
                   <g>
-                    <rect x="46" y="52" width="20" height="100" rx="3" fill="#FAFAF8"/>
-                    <rect x="70" y="44" width="20" height="108" rx="3" fill="#B23A2E"/>
-                    <rect x="94" y="58" width="20" height="94" rx="3" fill="#E4E1DC"/>
-                    <rect x="118" y="48" width="20" height="104" rx="3" fill="#FAFAF8"/>
-                    <rect x="36" y="150" width="112" height="12" rx="3" fill="#111110"/>
+                    <rect x="46" y="52" width="20" height="100" rx="3" fill="#F7FBEE"/>
+                    <rect x="70" y="44" width="20" height="108" rx="3" fill="#F2D14E"/>
+                    <rect x="94" y="58" width="20" height="94" rx="3" fill="#A8BE7A"/>
+                    <rect x="118" y="48" width="20" height="104" rx="3" fill="#F7FBEE"/>
+                    <rect x="36" y="150" width="112" height="12" rx="3" fill="#141C0C"/>
                   </g>
                 </svg>
               {%- else -%}
                 <svg viewBox="0 0 200 200" role="img" aria-label="Book category">
-                  <rect width="200" height="200" fill="#EFEADF"/>
-                  <g stroke="#111110" stroke-width="3.2" fill="none" stroke-linejoin="round">
-                    <path d="M40 62c18-8 42-8 60 0 18-8 42-8 60 0v78c-18-8-42-8-60 0-18-8-42-8-60 0Z" fill="#FAFAF8"/>
+                  <rect width="200" height="200" fill="#EEEDDC"/>
+                  <g stroke="#1F2A14" stroke-width="3.2" fill="none" stroke-linejoin="round">
+                    <path d="M40 62c18-8 42-8 60 0 18-8 42-8 60 0v78c-18-8-42-8-60 0-18-8-42-8-60 0Z" fill="#F7FBEE"/>
                     <path d="M100 62v78"/>
                   </g>
                 </svg>
