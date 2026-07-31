@@ -82,25 +82,32 @@
           "settings": {
             "collection": "libros-en-espanol"
           }
+        },
+        "cat_5": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "boxed-sets-series"
+          }
         }
       },
       "block_order": [
         "cat_1",
         "cat_2",
         "cat_3",
-        "cat_4"
+        "cat_4",
+        "cat_5"
       ],
       "settings": {
-        "title": "Shop by category",
-        "heading_size": "h1",
+        "title": "",
+        "heading_size": "h2",
         "image_ratio": "square",
-        "columns_desktop": 4,
+        "columns_desktop": 5,
         "color_scheme": "scheme-1",
         "show_view_all": false,
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 56,
-        "padding_bottom": 40
+        "padding_top": 48,
+        "padding_bottom": 24
       }
     },
     "featured_bestsellers": {
@@ -114,10 +121,10 @@
         "collection": "bestsellers",
         "products_to_show": 10,
         "columns_desktop": 5,
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "full_width": false,
         "show_view_all": true,
-        "view_all_style": "solid",
+        "view_all_style": "link",
         "enable_desktop_slider": true,
         "swipe_on_mobile": true,
         "image_ratio": "square",
@@ -127,8 +134,101 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
-        "padding_top": 44,
+        "padding_top": 32,
         "padding_bottom": 44
+      }
+    },
+    "trust_bar": {
+      "type": "multicolumn",
+      "blocks": {
+        "trust_1": {
+          "type": "column",
+          "settings": {
+            "title": "Fast US shipping",
+            "text": "<p>Orders ship from Brooklyn, NY within 1\u20132 business days.</p>"
+          }
+        },
+        "trust_2": {
+          "type": "column",
+          "settings": {
+            "title": "Easy returns",
+            "text": "<p>Not the right fit? Send it back \u2014 see our return policy for details.</p>"
+          }
+        },
+        "trust_3": {
+          "type": "column",
+          "settings": {
+            "title": "Secure checkout",
+            "text": "<p>Every payment is encrypted and processed through Shopify Payments.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "trust_1",
+        "trust_2",
+        "trust_3"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "square",
+        "button_label": "",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "stats": {
+      "type": "multicolumn",
+      "blocks": {
+        "stat_1": {
+          "type": "column",
+          "settings": {
+            "title": "480+",
+            "text": "<p>Titles in stock<br>Study guides, coloring books, Bibles and more.</p>"
+          }
+        },
+        "stat_2": {
+          "type": "column",
+          "settings": {
+            "title": "10",
+            "text": "<p>Curated categories<br>Hand-sorted so you find the right book faster.</p>"
+          }
+        },
+        "stat_3": {
+          "type": "column",
+          "settings": {
+            "title": "2",
+            "text": "<p>Languages<br>English and Spanish editions, side by side.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3"
+      ],
+      "settings": {
+        "title": "A shelf worth browsing.",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "button_label": "Browse the full catalog",
+        "button_link": "shopify://collections/all",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 56,
+        "padding_bottom": 56
       }
     },
     "featured_collection": {
@@ -145,7 +245,7 @@
         "color_scheme": "scheme-1",
         "full_width": false,
         "show_view_all": true,
-        "view_all_style": "solid",
+        "view_all_style": "link",
         "enable_desktop_slider": false,
         "swipe_on_mobile": false,
         "image_ratio": "square",
@@ -164,6 +264,8 @@
     "image_banner",
     "collection_categories",
     "featured_bestsellers",
+    "trust_bar",
+    "stats",
     "featured_collection"
   ]
 }
