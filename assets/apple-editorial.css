@@ -1,6 +1,5 @@
 /* Book Plume — stats, trust bar, and paper-texture background.
-   Targets Dawn's multicolumn section; scoped by section id classes set
-   in templates/index.json so other multicolumn sections stay untouched. */
+   Matcha + Banana palette. */
 
 /* Subtle paper grain so light sections never read as flat white */
 body::before {
@@ -9,10 +8,10 @@ body::before {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.5;
+  opacity: 0.55;
   background-image:
-    radial-gradient(rgba(74, 70, 66, 0.055) 1px, transparent 1px),
-    radial-gradient(rgba(74, 70, 66, 0.035) 1px, transparent 1px);
+    radial-gradient(rgba(60, 74, 40, 0.055) 1px, transparent 1px),
+    radial-gradient(rgba(60, 74, 40, 0.035) 1px, transparent 1px);
   background-size: 22px 22px, 34px 34px;
   background-position: 0 0, 11px 17px;
 }
@@ -25,7 +24,7 @@ footer {
   z-index: 1;
 }
 
-/* Stats block — oversized numerals */
+/* Stats block — oversized numerals in matcha */
 #shopify-section-stats .multicolumn-card__info h3 {
   font-family: var(--font-heading-family);
   font-size: clamp(4.4rem, 7vw, 7.2rem);
@@ -33,6 +32,7 @@ footer {
   letter-spacing: -0.04em;
   line-height: 1;
   margin: 0 0 1.2rem;
+  color: rgb(var(--color-secondary-button-text));
 }
 
 #shopify-section-stats .multicolumn-card__info .rte {
@@ -59,7 +59,7 @@ footer {
 
 #shopify-section-trust_bar .multicolumn-card__info .rte {
   font-size: 1.4rem;
-  opacity: 0.7;
+  opacity: 0.75;
   max-width: 32ch;
   margin-inline: auto;
 }
