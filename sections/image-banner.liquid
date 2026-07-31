@@ -1,5 +1,9 @@
 {{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Instrument+Sans:wght@400;500;600&family=Public+Sans:wght@400;500&display=swap" rel="stylesheet">
+
 {%- if section.settings.image_height == 'adapt' and section.settings.image != blank -%}
   {%- style -%}
     @media screen and (max-width: 749px) {
@@ -24,6 +28,203 @@
 {%- endif -%}
 
 {%- style -%}
+  /* ---- Apple-style visual layer, scoped to this section instance ---- */
+  #Banner-{{ section.id }} {
+    /* palette: warm grey surface + terracotta accent, layered on top of the
+       theme's own color-scheme variables so the merchant's scheme picker
+       still governs base text/background unless overridden below */
+    --apple-surface: 244 240 233;      /* warm grey panel */
+    --apple-ink: 38 32 28;             /* warm near-black ink */
+    --apple-accent: 193 96 61;         /* terracotta */
+    --apple-accent-hover: 171 82 51;
+    --apple-accent-ink: 255 255 255;
+
+    /* longer, softer easing for the reveal animation already driven by
+       assets/animations.js -- no new JS, just re-tuning the existing vars */
+    --duration-extra-long: 900ms;
+    --ease-out-slow: cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* flatten Dawn's default pill buttons for this section only */
+    --buttons-radius: 0px;
+    --buttons-radius-outset: 0px;
+    --buttons-border-opacity: 0;
+    --buttons-shadow-opacity: 0;
+  }
+
+  #Banner-{{ section.id }} {
+    position: relative;
+    overflow: hidden;
+    display: block;
+  }
+
+  #Banner-{{ section.id }}.banner--small { min-height: clamp(360px, 42vh, 560px); }
+  #Banner-{{ section.id }}.banner--medium { min-height: clamp(420px, 58vh, 680px); }
+  #Banner-{{ section.id }}.banner--large { min-height: clamp(480px, 82vh, 860px); }
+
+  #Banner-{{ section.id }} .banner__media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  #Banner-{{ section.id }} .banner__media-half {
+    width: 50%;
+  }
+
+  #Banner-{{ section.id }}.banner--stacked .banner__media-half {
+    position: relative;
+  }
+
+  #Banner-{{ section.id }} .banner__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  #Banner-{{ section.id }}::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: #000;
+    pointer-events: none;
+  }
+
+  #Banner-{{ section.id }} .banner__content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    padding: 60px 24px;
+  }
+
+  @media screen and (min-width: 750px) {
+    #Banner-{{ section.id }} .banner__content { padding: 90px 48px; }
+  }
+
+  @media screen and (min-width: 990px) {
+    #Banner-{{ section.id }} .banner__content { padding: 120px 64px; }
+  }
+
+  #Banner-{{ section.id }} .banner__content--top-left { align-items: flex-start; justify-content: flex-start; }
+  #Banner-{{ section.id }} .banner__content--top-center { align-items: flex-start; justify-content: center; }
+  #Banner-{{ section.id }} .banner__content--top-right { align-items: flex-start; justify-content: flex-end; }
+  #Banner-{{ section.id }} .banner__content--middle-left { align-items: center; justify-content: flex-start; }
+  #Banner-{{ section.id }} .banner__content--middle-center { align-items: center; justify-content: center; }
+  #Banner-{{ section.id }} .banner__content--middle-right { align-items: center; justify-content: flex-end; }
+  #Banner-{{ section.id }} .banner__content--bottom-left { align-items: flex-end; justify-content: flex-start; }
+  #Banner-{{ section.id }} .banner__content--bottom-center { align-items: flex-end; justify-content: center; }
+  #Banner-{{ section.id }} .banner__content--bottom-right { align-items: flex-end; justify-content: flex-end; }
+
+  #Banner-{{ section.id }} .banner__box {
+    max-width: 640px;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    border: none;
+  }
+
+  #Banner-{{ section.id }}:not(.banner--desktop-transparent) .banner__box {
+    --color-background: var(--apple-surface);
+    --color-foreground: var(--apple-ink);
+    background: rgb(var(--color-background));
+    padding: 40px 32px;
+  }
+
+  @media screen and (min-width: 750px) {
+    #Banner-{{ section.id }}:not(.banner--desktop-transparent) .banner__box {
+      padding: 56px 64px;
+    }
+  }
+
+  #Banner-{{ section.id }}.banner--content-align-left .banner__box { text-align: left; margin-right: auto; }
+  #Banner-{{ section.id }}.banner--content-align-center .banner__box { text-align: center; margin: 0 auto; }
+  #Banner-{{ section.id }}.banner--content-align-right .banner__box { text-align: right; margin-left: auto; }
+
+  #Banner-{{ section.id }} .banner__heading {
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: -0.01em;
+    line-height: 1.08;
+    margin: 0;
+  }
+
+  #Banner-{{ section.id }} .banner__text {
+    margin-top: 20px;
+    font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  #Banner-{{ section.id }} .banner__text p {
+    font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+    margin: 0;
+  }
+
+  #Banner-{{ section.id }} .banner__text.caption-with-letter-spacing {
+    font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 500;
+  }
+
+  #Banner-{{ section.id }} .banner__buttons {
+    margin-top: 32px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  #Banner-{{ section.id }}.banner--content-align-center .banner__buttons { justify-content: center; }
+  #Banner-{{ section.id }}.banner--content-align-left .banner__buttons { justify-content: flex-start; }
+  #Banner-{{ section.id }}.banner--content-align-right .banner__buttons { justify-content: flex-end; }
+
+  #Banner-{{ section.id }} .button {
+    font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    padding: 0 32px;
+    min-height: 52px;
+  }
+
+  #Banner-{{ section.id }} .button--primary {
+    --color-button: var(--apple-accent);
+    --color-button-text: var(--apple-accent-ink);
+  }
+
+  #Banner-{{ section.id }} .button--primary:hover {
+    --color-button: var(--apple-accent-hover);
+  }
+
+  #Banner-{{ section.id }} .button--secondary {
+    background: transparent;
+  }
+
+  @media screen and (max-width: 749px) {
+    #Banner-{{ section.id }}.banner--mobile-bottom {
+      display: flex;
+      flex-direction: column;
+      min-height: auto;
+    }
+
+    #Banner-{{ section.id }}.banner--mobile-bottom .banner__media {
+      position: relative;
+      height: 56vw;
+    }
+
+    #Banner-{{ section.id }}.banner--mobile-bottom .banner__content {
+      position: relative;
+      inset: auto;
+      padding: 60px 24px;
+    }
+
+    #Banner-{{ section.id }}.banner--content-align-mobile-left .banner__box { text-align: left; margin-right: auto; margin-left: 0; }
+    #Banner-{{ section.id }}.banner--content-align-mobile-center .banner__box { text-align: center; margin: 0 auto; }
+    #Banner-{{ section.id }}.banner--content-align-mobile-right .banner__box { text-align: right; margin-left: auto; margin-right: 0; }
+  }
+
   #Banner-{{ section.id }}::after {
     opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
   }
@@ -121,18 +322,30 @@
         {%- case block.type -%}
           {%- when 'heading' -%}
             <h2
-              class="banner__heading inline-richtext {{ block.settings.heading_size }}"
+              class="banner__heading inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade style="--animation-order: {{ forloop.index }};"
+              {% endif %}
               {{ block.shopify_attributes }}
             >
               {{ block.settings.heading }}
             </h2>
           {%- when 'text' -%}
-            <div class="banner__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
+            <div
+              class="banner__text rte {{ block.settings.text_style }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade style="--animation-order: {{ forloop.index }};"
+              {% endif %}
+              {{ block.shopify_attributes }}
+            >
               <p>{{ block.settings.text }}</p>
             </div>
           {%- when 'buttons' -%}
             <div
-              class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}"
+              class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade style="--animation-order: {{ forloop.index }};"
+              {% endif %}
               {{ block.shopify_attributes }}
             >
               {%- if block.settings.button_label_1 != blank -%}
