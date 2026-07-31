@@ -28,34 +28,33 @@
     opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
   }
 
-  /* --- Apple-style skin (Book Plume) --- */
+  /* --- Book Plume: Matcha + Banana --- */
   @import url('https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
 
   #Banner-{{ section.id }} {
-    --bp-ink: #111110;
-    --bp-paper: #FAFAF8;
-    --bp-graphite: #4A4642;
-    --bp-accent: #B23A2E;
+    --bp-deep: #1F2A14;
+    --bp-paper: #F7FBEE;
+    --bp-matcha: #5C7A2F;
+    --bp-banana: #F2D14E;
   }
 
-  /* Gradient backdrop when no image is set — no stock illustration */
+  /* Gradient backdrop when no image is set */
   #Banner-{{ section.id }} .bp-banner__backdrop {
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(120% 90% at 15% 15%, rgba(178, 58, 46, 0.55) 0%, rgba(178, 58, 46, 0) 60%),
-      radial-gradient(100% 80% at 85% 80%, rgba(74, 70, 66, 0.5) 0%, rgba(74, 70, 66, 0) 65%),
-      linear-gradient(155deg, #2A211D 0%, #4A322B 45%, #1A1614 100%);
+      radial-gradient(120% 90% at 12% 12%, rgba(122, 160, 61, 0.72) 0%, rgba(122, 160, 61, 0) 62%),
+      radial-gradient(105% 85% at 88% 82%, rgba(242, 209, 78, 0.42) 0%, rgba(242, 209, 78, 0) 66%),
+      linear-gradient(155deg, #35471F 0%, #263516 48%, #161F0E 100%);
   }
 
   #Banner-{{ section.id }} .bp-banner__backdrop::after {
     content: '';
     position: absolute;
     inset: 0;
-    opacity: 0.28;
-    background-image:
-      radial-gradient(rgba(250, 250, 248, 0.14) 1px, transparent 1px);
+    opacity: 0.3;
+    background-image: radial-gradient(rgba(247, 251, 238, 0.16) 1px, transparent 1px);
     background-size: 26px 26px;
   }
 
@@ -99,25 +98,26 @@
   }
 
   #Banner-{{ section.id }} .banner__buttons .button--primary {
-    background: var(--bp-accent) !important;
-    border-color: var(--bp-accent) !important;
-    color: var(--bp-paper) !important;
+    background: var(--bp-banana) !important;
+    border-color: var(--bp-banana) !important;
+    color: #2A2410 !important;
+    font-weight: 600 !important;
   }
 
   #Banner-{{ section.id }} .banner__buttons .button--primary:hover {
     transform: translateY(-1px);
-    opacity: 0.9;
+    opacity: 0.92;
   }
 
   #Banner-{{ section.id }} .banner__buttons .button--secondary {
-    background: rgba(250, 250, 248, 0.08) !important;
-    border: 1px solid rgba(250, 250, 248, 0.55) !important;
+    background: rgba(247, 251, 238, 0.08) !important;
+    border: 1px solid rgba(247, 251, 238, 0.55) !important;
     color: var(--bp-paper) !important;
     backdrop-filter: blur(4px);
   }
 
   #Banner-{{ section.id }} .banner__buttons .button--secondary:hover {
-    background: rgba(250, 250, 248, 0.16) !important;
+    background: rgba(247, 251, 238, 0.16) !important;
   }
 
   @keyframes bp-fade-up {
