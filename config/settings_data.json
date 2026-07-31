@@ -15,22 +15,22 @@
       "color_schemes": {
         "scheme-1": {
           "settings": {
-            "background": "#FAFAF8",
+            "background": "#F7F4ED",
             "background_gradient": "",
             "text": "#111110",
             "button": "#111110",
-            "button_label": "#FAFAF8",
+            "button_label": "#F7F4ED",
             "secondary_button_label": "#B23A2E",
             "shadow": "#111110"
           }
         },
         "scheme-2": {
           "settings": {
-            "background": "#F1EEE7",
+            "background": "#EFEADF",
             "background_gradient": "",
             "text": "#111110",
             "button": "#111110",
-            "button_label": "#F1EEE7",
+            "button_label": "#EFEADF",
             "secondary_button_label": "#B23A2E",
             "shadow": "#111110"
           }
@@ -39,10 +39,10 @@
           "settings": {
             "background": "#111110",
             "background_gradient": "",
-            "text": "#FAFAF8",
-            "button": "#FAFAF8",
+            "text": "#F7F4ED",
+            "button": "#F7F4ED",
             "button_label": "#111110",
-            "secondary_button_label": "#FAFAF8",
+            "secondary_button_label": "#F7F4ED",
             "shadow": "#000000"
           }
         },
@@ -50,20 +50,20 @@
           "settings": {
             "background": "#B23A2E",
             "background_gradient": "",
-            "text": "#FAFAF8",
-            "button": "#FAFAF8",
+            "text": "#F7F4ED",
+            "button": "#F7F4ED",
             "button_label": "#B23A2E",
-            "secondary_button_label": "#FAFAF8",
+            "secondary_button_label": "#F7F4ED",
             "shadow": "#000000"
           }
         },
         "scheme-5": {
           "settings": {
-            "background": "#E4E1DC",
+            "background": "#E5DFD2",
             "background_gradient": "",
             "text": "#111110",
             "button": "#111110",
-            "button_label": "#E4E1DC",
+            "button_label": "#E5DFD2",
             "secondary_button_label": "#B23A2E",
             "shadow": "#111110"
           }
@@ -74,7 +74,7 @@
       "type_body_font": "assistant_n4",
       "body_scale": 100,
       "page_width": 1200,
-      "spacing_sections": 80,
+      "spacing_sections": 0,
       "spacing_grid_horizontal": 24,
       "spacing_grid_vertical": 32,
       "animations_reveal_on_scroll": true,
@@ -103,7 +103,7 @@
       "card_style": "standard",
       "card_image_padding": 0,
       "card_text_alignment": "left",
-      "card_color_scheme": "scheme-2",
+      "card_color_scheme": "scheme-1",
       "card_border_thickness": 0,
       "card_border_opacity": 10,
       "card_corner_radius": 16,
@@ -114,7 +114,7 @@
       "collection_card_style": "standard",
       "collection_card_image_padding": 0,
       "collection_card_text_alignment": "left",
-      "collection_card_color_scheme": "scheme-2",
+      "collection_card_color_scheme": "scheme-1",
       "collection_card_border_thickness": 0,
       "collection_card_border_opacity": 10,
       "collection_card_corner_radius": 16,
