@@ -1,0 +1,59 @@
+{%- comment -%}
+  Book Plume — inline promo banner for the product buy box.
+  Self-contained styles (not tied to any section id) so it can be
+  dropped in via a custom_liquid block right after Buy buttons.
+{%- endcomment -%}
+
+{%- style -%}
+  .bp-inline-promo {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    background: #B23A2E;
+    color: #FAFAF8;
+    border-radius: 14px;
+    padding: 1.5rem 1.7rem;
+    text-decoration: none;
+    margin: 1.6rem 0 0.4rem;
+  }
+
+  .bp-inline-promo__badge {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.16);
+    font-family: var(--font-heading-family);
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .bp-inline-promo__title {
+    font-family: var(--font-heading-family);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+    display: block;
+  }
+
+  .bp-inline-promo__sub {
+    font-size: 1.2rem;
+    opacity: 0.85;
+    line-height: 1.3;
+    display: block;
+    margin-top: 0.2rem;
+  }
+{%- endstyle -%}
+
+<a href="{{ routes.all_products_collection_url }}" class="bp-inline-promo">
+  <span class="bp-inline-promo__badge">-10%</span>
+  <span>
+    <span class="bp-inline-promo__title">Buy any 3 books, save 10%</span>
+    <span class="bp-inline-promo__sub">Applies automatically at checkout — no code needed.</span>
+  </span>
+</a>
