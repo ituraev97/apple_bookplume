@@ -603,6 +603,14 @@ details > * {
   --ease-out-slow: cubic-bezier(0, 0, 0.3, 1);
   --animation-slide-in: slideIn var(--duration-extra-long) var(--ease-out-slow) forwards;
   --animation-fade-in: fadeIn var(--duration-extra-long) var(--ease-out-slow);
+
+  /* Native system font stack: renders as San Francisco on Apple devices */
+  --font-body-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-heading-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body-weight: 400;
+  --font-heading-weight: 600;
+  --font-body-style: normal;
+  --font-heading-style: normal;
 }
 
 .underlined-link,
