@@ -39,6 +39,26 @@
     --bp-accent: #B23A2E;
   }
 
+  /* Gradient backdrop when no image is set — no stock illustration */
+  #Banner-{{ section.id }} .bp-banner__backdrop {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(120% 90% at 15% 15%, rgba(178, 58, 46, 0.55) 0%, rgba(178, 58, 46, 0) 60%),
+      radial-gradient(100% 80% at 85% 80%, rgba(74, 70, 66, 0.5) 0%, rgba(74, 70, 66, 0) 65%),
+      linear-gradient(155deg, #2A211D 0%, #4A322B 45%, #1A1614 100%);
+  }
+
+  #Banner-{{ section.id }} .bp-banner__backdrop::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.28;
+    background-image:
+      radial-gradient(rgba(250, 250, 248, 0.14) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+
   #Banner-{{ section.id }} .banner__heading {
     font-family: 'General Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
     font-weight: 600 !important;
@@ -54,7 +74,6 @@
     font-family: 'Inter', sans-serif !important;
     font-weight: 400 !important;
     color: var(--bp-paper) !important;
-    opacity: 0.85;
     max-width: 520px;
     margin-left: auto;
     margin-right: auto;
@@ -91,13 +110,14 @@
   }
 
   #Banner-{{ section.id }} .banner__buttons .button--secondary {
-    background: transparent !important;
-    border: 1px solid rgba(250, 250, 248, 0.6) !important;
+    background: rgba(250, 250, 248, 0.08) !important;
+    border: 1px solid rgba(250, 250, 248, 0.55) !important;
     color: var(--bp-paper) !important;
+    backdrop-filter: blur(4px);
   }
 
   #Banner-{{ section.id }} .banner__buttons .button--secondary:hover {
-    background: rgba(250, 250, 248, 0.12) !important;
+    background: rgba(250, 250, 248, 0.16) !important;
   }
 
   @keyframes bp-fade-up {
@@ -142,7 +162,7 @@
   class="banner banner--content-align-{{ section.settings.desktop_content_alignment }} banner--content-align-mobile-{{ section.settings.mobile_content_alignment }} banner--{{ section.settings.image_height }}{% if section.settings.stack_images_on_mobile and section.settings.image != blank and section.settings.image_2 != blank %} banner--stacked{% endif %}{% if section.settings.image_height == 'adapt' and section.settings.image != blank %} banner--adapt{% endif %}{% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}{% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
 >
   {%- if section.settings.image != blank -%}
-    <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+    <div class="banner__media media{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
       {%- liquid
         assign image_height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio
         if section.settings.image_2 != blank
@@ -169,8 +189,8 @@
       }}
     </div>
   {%- elsif section.settings.image_2 == blank -%}
-    <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    <div class="banner__media media">
+      <div class="bp-banner__backdrop" role="presentation"></div>
     </div>
   {%- endif -%}
   {%- if section.settings.image_2 != blank -%}
