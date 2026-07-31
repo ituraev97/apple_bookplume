@@ -11,28 +11,43 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
+    "marquee": {
+      "type": "marquee-bar",
       "blocks": {
-        "announcement-bar-0": {
-          "type": "announcement",
+        "m1": {
+          "type": "message",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "Free shipping on US orders over $49",
+            "code": "",
+            "link": ""
+          }
+        },
+        "m2": {
+          "type": "message",
+          "settings": {
+            "text": "New arrivals every week",
+            "code": "",
+            "link": "shopify://collections/all"
+          }
+        },
+        "m3": {
+          "type": "message",
+          "settings": {
+            "text": "Anatomy \u00b7 Coloring \u00b7 Bible \u00b7 Espa\u00f1ol",
+            "code": "",
             "link": ""
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "m1",
+        "m2",
+        "m3"
       ],
       "settings": {
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "color_scheme": "scheme-1",
-        "show_line_separator": true,
-        "show_social": false,
-        "enable_country_selector": false,
-        "enable_language_selector": false
+        "color_scheme": "scheme-4",
+        "speed": 65,
+        "padding": 10
       }
     },
     "header": {
@@ -56,7 +71,7 @@
     }
   },
   "order": [
-    "announcement-bar",
+    "marquee",
     "header"
   ]
 }
