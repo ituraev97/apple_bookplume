@@ -2,53 +2,74 @@
   Book Plume — "Buy now" button.
 
   Sends the selected variant straight to checkout via a cart permalink,
-  skipping the cart page. Replaces Shopify's dynamic checkout button,
-  whose wording and colour we cannot change.
+  with the current promo code already applied. Replaces Shopify's dynamic
+  checkout button, whose wording and colour cannot be changed.
 
-  The href is rebuilt on variant change so it always points at whatever
-  the customer has actually selected.
+  On load the button relocates itself into .product-form__buttons so it
+  sits directly beneath Add to cart with a single controlled gap, rather
+  than a section-block margin we cannot predict.
 {%- endcomment -%}
 
 {%- assign v = product.selected_or_first_available_variant -%}
+{%- assign promo = 'AUGUST15' -%}
 
-{%- if v.available -%}
-  <a
-    class="bp-buynow"
-    href="{{ routes.cart_url }}/{{ v.id }}:1?discount={{ 'AUGUST15' }}"
-    data-bp-buynow
-    data-cart-root="{{ routes.cart_url }}"
-  >Buy now</a>
-{%- else -%}
-  <span class="bp-buynow" aria-disabled="true">Sold out</span>
-{%- endif -%}
+<div class="bp-buynow-slot">
+  {%- if v.available -%}
+    <a
+      class="bp-buynow"
+      href="{{ routes.cart_url }}/{{ v.id }}:1?discount={{ promo }}"
+      data-bp-buynow
+      data-cart-root="{{ routes.cart_url }}"
+      data-promo="{{ promo }}"
+    >Buy now</a>
+  {%- else -%}
+    <span class="bp-buynow" aria-disabled="true">Sold out</span>
+  {%- endif -%}
+</div>
 
 <script>
   (function () {
-    var link = document.currentScript.previousElementSibling;
-    while (link && !link.hasAttribute('data-bp-buynow')) {
-      link = link.previousElementSibling;
+    var slot = document.currentScript.previousElementSibling;
+    while (slot && !slot.classList.contains('bp-buynow-slot')) {
+      slot = slot.previousElementSibling;
     }
-    if (!link) return;
+    if (!slot) return;
 
-    var root = link.getAttribute('data-cart-root') || '/cart';
+    var btn = slot.querySelector('.bp-buynow');
+    if (!btn) return;
 
-    function currentVariantId() {
-      var form = document.querySelector('product-form form, form[action*="/cart/add"]');
-      if (!form) return null;
-      var input = form.querySelector('input[name="id"], select[name="id"]');
-      return input ? input.value : null;
+    // Move the button next to Add to cart
+    var host = document.querySelector('.product-form__buttons');
+    if (host && !host.contains(btn)) {
+      host.appendChild(btn);
+      slot.remove();
     }
+
+    if (btn.tagName !== 'A') return;
+
+    var root = btn.getAttribute('data-cart-root') || '/cart';
+    var promo = btn.getAttribute('data-promo') || '';
 
     function sync() {
-      var id = currentVariantId();
-      if (!id) return;
-      var qtyField = document.querySelector('.quantity__input, input[name="quantity"]');
-      var qty = qtyField && parseInt(qtyField.value, 10) > 0 ? parseInt(qtyField.value, 10) : 1;
-      link.href = root + '/' + id + ':' + qty + '?discount=AUGUST15';
+      var form = document.querySelector('product-form form, form[action*="/cart/add"]');
+      if (!form) return;
+      var idField = form.querySelector('[name="id"]');
+      if (!idField || !idField.value) return;
+
+      var qtyField = document.querySelector('.quantity__input, [name="quantity"]');
+      var qty = 1;
+      if (qtyField) {
+        var parsed = parseInt(qtyField.value, 10);
+        if (parsed > 0) qty = parsed;
+      }
+
+      var url = root + '/' + idField.value + ':' + qty;
+      if (promo) url += '?discount=' + promo;
+      btn.href = url;
     }
 
     sync();
     document.addEventListener('change', sync);
-    document.addEventListener('variant:change', sync);
+    document.addEventListener('input', sync);
   })();
 </script>
