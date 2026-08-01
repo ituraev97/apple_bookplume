@@ -59,8 +59,8 @@
     "countdown": {
       "type": "countdown-bar",
       "settings": {
-        "heading": "August Sale — 15% off everything",
-        "subtext": "Applied automatically at checkout. No code needed.",
+        "heading": "August Sale \u2014 15% off everything with code AUGUST15",
+        "subtext": "Enter the code at checkout. Ends 31 August.",
         "end_date": "2026-08-31",
         "end_time": "23:59",
         "color_scheme": "scheme-5",
@@ -162,14 +162,14 @@
           "type": "column",
           "settings": {
             "title": "Fast US shipping",
-            "text": "<p>Orders ship from Brooklyn, NY within 1–2 business days.</p>"
+            "text": "<p>Orders ship from Brooklyn, NY within 1\u20132 business days.</p>"
           }
         },
         "trust_2": {
           "type": "column",
           "settings": {
             "title": "Easy returns",
-            "text": "<p>Not the right fit? Send it back — see our return policy for details.</p>"
+            "text": "<p>Not the right fit? Send it back \u2014 see our return policy for details.</p>"
           }
         },
         "trust_3": {
@@ -208,7 +208,7 @@
           "type": "column",
           "settings": {
             "title": "480+",
-            "text": "<p>Titles in stock — study guides, coloring books, Bibles and more.</p>"
+            "text": "<p>Titles in stock \u2014 study guides, coloring books, Bibles and more.</p>"
           }
         },
         "stat_2": {
@@ -222,7 +222,7 @@
           "type": "column",
           "settings": {
             "title": "2",
-            "text": "<p>Languages — English and Spanish editions, side by side.</p>"
+            "text": "<p>Languages \u2014 English and Spanish editions, side by side.</p>"
           }
         }
       },
