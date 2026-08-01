@@ -1,0 +1,37 @@
+{%- comment -%}
+  Book Plume — brand mark, variant A "Pulled".
+  Four spines on a shelf; one pulled out and tilted 16°.
+
+  Usage:
+    {% render 'bp-logo' %}                        mark + wordmark, matcha on light
+    {% render 'bp-logo', variant: 'reversed' %}   paper on dark grounds
+    {% render 'bp-logo', mark_only: true %}       square mark, no wordmark
+    {% render 'bp-logo', height: 30 %}            mark height in px (default 26)
+
+  The wordmark stays live text in General Sans rather than outlines,
+  so it remains selectable, readable to screen readers, and weighs
+  nothing. Same face as the supplied lockup SVG.
+{%- endcomment -%}
+
+{%- liquid
+  assign h = height | default: 26
+  assign spine = '#5C7A2F'
+  assign pulled = '#F2D14E'
+  assign word = '#1F2A14'
+  if variant == 'reversed'
+    assign spine = '#F7F6EC'
+    assign word = '#F7F6EC'
+  endif
+-%}
+
+<span class="bp-logo" style="--bp-logo-h: {{ h }}px;">
+  <svg class="bp-logo__mark" viewBox="0 0 64 64" role="img" aria-label="{{ shop.name | escape }}" focusable="false">
+    <rect x="13" y="17" width="9" height="34" rx="4.5" fill="{{ spine }}"></rect>
+    <rect x="23" y="17" width="9" height="34" rx="4.5" fill="{{ spine }}"></rect>
+    <rect x="42" y="17" width="9" height="34" rx="4.5" fill="{{ spine }}"></rect>
+    <rect x="31" y="13" width="9" height="38" rx="4.5" fill="{{ pulled }}" transform="rotate(16 35.5 51)"></rect>
+  </svg>
+  {%- unless mark_only -%}
+    <span class="bp-logo__word" style="color: {{ word }};">BookPlume</span>
+  {%- endunless -%}
+</span>
