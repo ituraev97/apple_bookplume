@@ -29,11 +29,11 @@
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop bestsellers",
-            "button_link_1": "shopify://collections/bestsellers",
+            "button_label_1": "Shop the August Sale",
+            "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": false,
-            "button_label_2": "Browse all",
-            "button_link_2": "shopify://collections/all",
+            "button_label_2": "Bestsellers",
+            "button_link_2": "shopify://collections/bestsellers",
             "button_style_secondary_2": true
           }
         }
@@ -54,6 +54,17 @@
         "stack_images_on_mobile": false,
         "mobile_content_alignment": "center",
         "show_text_below": false
+      }
+    },
+    "countdown": {
+      "type": "countdown-bar",
+      "settings": {
+        "heading": "August Sale — 15% off everything",
+        "subtext": "Applied automatically at checkout. No code needed.",
+        "end_date": "2026-08-31",
+        "end_time": "23:59",
+        "color_scheme": "scheme-5",
+        "padding": 24
       }
     },
     "featured_bestsellers": {
@@ -203,7 +214,7 @@
         "stat_2": {
           "type": "column",
           "settings": {
-            "title": "10",
+            "title": "7",
             "text": "<p>Curated categories, hand-sorted so you find the right book faster.</p>"
           }
         },
@@ -268,6 +279,7 @@
   },
   "order": [
     "image_banner",
+    "countdown",
     "featured_bestsellers",
     "category_tiles",
     "trust_bar",
