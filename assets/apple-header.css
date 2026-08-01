@@ -1,5 +1,5 @@
 /* Book Plume — header skin: blurred sticky bar, pill nav,
-   thin oversized icons. */
+   thin oversized icons, brand lockup. */
 
 .header-wrapper {
   backdrop-filter: blur(14px);
@@ -11,14 +11,38 @@
   padding-inline: 2rem;
 }
 
-/* Logo / wordmark */
-.header__heading-logo,
-.header__heading-link {
+/* --- Brand lockup (snippets/bp-logo.liquid) --- */
+.bp-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.bp-logo__mark {
+  height: var(--bp-logo-h, 26px);
+  width: var(--bp-logo-h, 26px);
+  display: block;
+  flex-shrink: 0;
+}
+
+.bp-logo__word {
   font-family: var(--font-heading-family);
   font-weight: 600;
-  letter-spacing: -0.02em;
-  font-size: 2rem;
+  letter-spacing: -0.035em;
+  font-size: calc(var(--bp-logo-h, 26px) * 0.82);
   white-space: nowrap;
+}
+
+/* Kill Dawn's own wordmark styling on the header link */
+.header__heading-link {
+  padding: 0;
+  text-decoration: none;
+}
+
+.header__heading-link:hover .bp-logo__word {
+  text-decoration: none;
 }
 
 /* Nav sits on one line beside the logo — never wraps */
@@ -111,4 +135,8 @@
 /* Sticky shadow only once scrolled */
 .shopify-section-header-sticky {
   box-shadow: 0 1px 0 rgba(var(--color-foreground), 0.08);
+}
+
+@media screen and (max-width: 749px) {
+  .bp-logo { --bp-logo-h: 24px; }
 }
