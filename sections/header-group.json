@@ -17,7 +17,7 @@
         "m0": {
           "type": "message",
           "settings": {
-            "text": "Buy any 3 books, save 10% \u2014 no code needed",
+            "text": "August Sale \u2014 15% off everything, applied automatically",
             "code": "",
             "link": "shopify://collections/all"
           }
@@ -29,33 +29,15 @@
             "code": "",
             "link": ""
           }
-        },
-        "m2": {
-          "type": "message",
-          "settings": {
-            "text": "New arrivals every week",
-            "code": "",
-            "link": "shopify://collections/all"
-          }
-        },
-        "m3": {
-          "type": "message",
-          "settings": {
-            "text": "Anatomy \u00b7 Coloring \u00b7 Bible \u00b7 Espa\u00f1ol",
-            "code": "",
-            "link": ""
-          }
         }
       },
       "block_order": [
         "m0",
-        "m1",
-        "m2",
-        "m3"
+        "m1"
       ],
       "settings": {
         "color_scheme": "scheme-4",
-        "speed": 75,
+        "speed": 60,
         "padding": 10
       }
     },
