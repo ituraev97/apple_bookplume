@@ -1,5 +1,5 @@
 /* Book Plume — header skin: blurred sticky bar, pill nav,
-   Yepoda-style thin oversized icons. */
+   thin oversized icons. */
 
 .header-wrapper {
   backdrop-filter: blur(14px);
@@ -68,7 +68,6 @@
   background: rgba(var(--color-foreground), 0.06);
 }
 
-/* Hamburger — thin rules like Yepoda */
 .header__icon--menu .svg-wrapper svg {
   stroke-width: 1.15;
 }
@@ -76,10 +75,10 @@
 /* Cart bubble in accent */
 .cart-count-bubble {
   background: rgb(var(--color-secondary-button-text));
-  color: rgb(var(--color-background));
-  font-family: 'IBM Plex Mono', monospace;
+  color: #F7FBEE;
+  font-family: var(--font-mono-family);
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   min-width: 1.8rem;
   height: 1.8rem;
   border-radius: 100px;
