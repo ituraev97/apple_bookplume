@@ -17,17 +17,30 @@
   font-family: var(--font-heading-family);
   font-weight: 600;
   letter-spacing: -0.02em;
-  font-size: 2.1rem;
+  font-size: 2rem;
+  white-space: nowrap;
 }
 
-/* Nav links as quiet pills */
+/* Nav sits on one line beside the logo — never wraps */
+.header__inline-menu .list-menu--inline {
+  flex-wrap: nowrap;
+}
+
 .header__menu-item {
-  font-size: 1.45rem;
+  font-size: 1.4rem;
   font-weight: 500;
   letter-spacing: -0.005em;
-  padding: 0.9rem 1.4rem;
+  padding: 0.8rem 1.1rem;
   border-radius: 100px;
+  white-space: nowrap;
   transition: background 0.2s ease;
+}
+
+@media screen and (min-width: 1200px) {
+  .header__menu-item {
+    font-size: 1.45rem;
+    padding: 0.8rem 1.3rem;
+  }
 }
 
 .header__menu-item:hover {
@@ -42,8 +55,8 @@
 /* --- Icons: thin strokes, generous size --- */
 .header__icon .svg-wrapper,
 .header__icon svg {
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.3rem;
+  height: 2.3rem;
 }
 
 .header__icon svg {
@@ -58,8 +71,8 @@
 }
 
 .header__icon {
-  height: 4.4rem;
-  width: 4.4rem;
+  height: 4.2rem;
+  width: 4.2rem;
   border-radius: 50%;
   transition: background 0.2s ease;
 }
@@ -82,6 +95,17 @@
   min-width: 1.8rem;
   height: 1.8rem;
   border-radius: 100px;
+}
+
+/* Dropdown panel */
+.header__submenu {
+  border-radius: 14px;
+  padding: 0.8rem;
+  border: 1px solid rgba(var(--color-foreground), 0.08);
+}
+
+.header__submenu .header__menu-item {
+  border-radius: 10px;
 }
 
 /* Sticky shadow only once scrolled */
