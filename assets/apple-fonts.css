@@ -1,0 +1,40 @@
+/* Book Plume — global typography.
+   Overrides Dawn's font CSS variables so every component
+   (headings, buttons, inputs, cards) picks up the type system
+   without touching each template individually. */
+
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --font-heading-family: 'General Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading-style: normal;
+  --font-heading-weight: 600;
+
+  --font-body-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body-style: normal;
+  --font-body-weight: 400;
+  --font-body-weight-bold: 600;
+
+  /* Shared mono stack for labels, badges and counters */
+  --font-mono-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+body {
+  letter-spacing: 0.005em;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h0, .h1, .h2, .h3, .h4, .h5, .h6 {
+  letter-spacing: -0.02em;
+  font-family: var(--font-heading-family);
+}
+
+/* Prices and any tabular figures line up column to column */
+.price,
+.price-item,
+.bp-cats__count,
+.product-count__text {
+  font-variant-numeric: tabular-nums;
+}
