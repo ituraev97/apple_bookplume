@@ -1,23 +1,56 @@
-/* Book Plume — Apple-style skin for product & collection cards.
+/* Book Plume — product & collection card skin.
    Accent colour is --color-secondary-button-text (Dawn maps
    --color-secondary-button to the background, not the accent). */
 
-.card__media {
+/* --- Uniform cover framing ---------------------------------
+   Book covers vary wildly in shape: tall paperbacks, wide boxed
+   sets, square flash-card decks. Rather than cropping them
+   (which would cut off titles), each cover is contained inside
+   an identical square frame with consistent padding and a shared
+   backdrop, so the grid reads as one tidy row of equal tiles. */
+
+.card--media .card__inner,
+.card--standard .card__inner {
+  background-color: #FFFFFF;
+}
+
+.card__media,
+.card__inner .media {
   overflow: hidden;
 }
 
-.card__media img {
+.card__inner .media img,
+.card--media .card__media img {
+  object-fit: contain !important;
+  padding: 12%;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.card:hover .card__media img {
-  transform: scale(1.035);
+@media screen and (min-width: 750px) {
+  .card__inner .media img,
+  .card--media .card__media img {
+    padding: 14%;
+  }
 }
 
+.card:hover .card__media img {
+  transform: scale(1.04);
+}
+
+/* Card text — clamp titles so every card is the same height */
 .card__heading {
   font-weight: 600;
   letter-spacing: -0.01em;
-  line-height: 1.25;
+  line-height: 1.3;
+}
+
+.card-information .card__heading,
+.card__content .card__heading {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.6em;
 }
 
 .card__badge .badge {
@@ -25,7 +58,7 @@
   font-size: 1.05rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
   padding-block: 0.5rem;
 }
 
@@ -43,7 +76,7 @@
   letter-spacing: 0;
 }
 
-/* --- Round category tiles --- */
+/* --- Round category tiles (legacy collection-list section) --- */
 .section-collection-list .card__inner,
 .section-collection-list .card__media,
 .section-collection-list .card--media .card__inner {
@@ -64,6 +97,7 @@
   font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: -0.005em;
+  min-height: 0;
 }
 
 .section-collection-list .card__inner {
@@ -76,6 +110,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .card__media img,
+  .card__inner .media img,
   .section-collection-list .card__inner {
     transition: none;
   }
