@@ -1,10 +1,6 @@
 /*
  * ------------------------------------------------------------
  * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
 {
@@ -28,7 +24,14 @@
         "quantity_selector": { "type": "quantity_selector", "settings": {} },
         "buy_buttons": {
           "type": "buy_buttons",
-          "settings": { "show_dynamic_checkout": true, "show_gift_card_recipient": true }
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "buy_now": {
+          "type": "custom_liquid",
+          "settings": { "custom_liquid": "{% render 'bp-buy-now' %}" }
         },
         "promo_inline": {
           "type": "custom_liquid",
@@ -48,6 +51,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "buy_now",
         "promo_inline",
         "description",
         "description_toggle",
