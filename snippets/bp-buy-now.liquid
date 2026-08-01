@@ -1,0 +1,54 @@
+{%- comment -%}
+  Book Plume — "Buy now" button.
+
+  Sends the selected variant straight to checkout via a cart permalink,
+  skipping the cart page. Replaces Shopify's dynamic checkout button,
+  whose wording and colour we cannot change.
+
+  The href is rebuilt on variant change so it always points at whatever
+  the customer has actually selected.
+{%- endcomment -%}
+
+{%- assign v = product.selected_or_first_available_variant -%}
+
+{%- if v.available -%}
+  <a
+    class="bp-buynow"
+    href="{{ routes.cart_url }}/{{ v.id }}:1?discount={{ 'AUGUST15' }}"
+    data-bp-buynow
+    data-cart-root="{{ routes.cart_url }}"
+  >Buy now</a>
+{%- else -%}
+  <span class="bp-buynow" aria-disabled="true">Sold out</span>
+{%- endif -%}
+
+<script>
+  (function () {
+    var link = document.currentScript.previousElementSibling;
+    while (link && !link.hasAttribute('data-bp-buynow')) {
+      link = link.previousElementSibling;
+    }
+    if (!link) return;
+
+    var root = link.getAttribute('data-cart-root') || '/cart';
+
+    function currentVariantId() {
+      var form = document.querySelector('product-form form, form[action*="/cart/add"]');
+      if (!form) return null;
+      var input = form.querySelector('input[name="id"], select[name="id"]');
+      return input ? input.value : null;
+    }
+
+    function sync() {
+      var id = currentVariantId();
+      if (!id) return;
+      var qtyField = document.querySelector('.quantity__input, input[name="quantity"]');
+      var qty = qtyField && parseInt(qtyField.value, 10) > 0 ? parseInt(qtyField.value, 10) : 1;
+      link.href = root + '/' + id + ':' + qty + '?discount=AUGUST15';
+    }
+
+    sync();
+    document.addEventListener('change', sync);
+    document.addEventListener('variant:change', sync);
+  })();
+</script>
