@@ -6,10 +6,12 @@
    The shimmer is a real light layer (::after), not a shifting background:
    a narrow, skewed white gradient that travels left to right and clips
    to the pill. That reads as light catching foil. Underneath sits a
-   three-stop base gradient so the button has depth even while still,
-   plus a slow glow on the shadow so it feels lit rather than printed. */
+   five-stop base gradient so the button has depth even while still,
+   plus a slow pulse on the shadow so it feels lit rather than printed.
 
-/* ---------- bring the two buttons together ---------- */
+   snippets/bp-buy-now.liquid moves the Buy now anchor into
+   .product-form__buttons on load, so both buttons share one flex gap. */
+
 .product-form {
   margin-top: 0.6rem;
   margin-bottom: 0;
@@ -18,16 +20,13 @@
 .product-form__buttons {
   max-width: none;
   margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
 }
 
-/* the Buy now block sits in its own section block — pull it up */
-.product__info-container > .product__custom-liquid:has(.bp-buynow),
-.product__info-container > div:has(> .bp-buynow) {
-  margin-top: -1.4rem;
-}
-
-.bp-buynow {
-  margin-top: 1rem;
+.bp-buynow-slot:empty {
+  display: none;
 }
 
 /* ---------- shared shape ---------- */
@@ -38,6 +37,7 @@
   isolation: isolate;
   width: 100%;
   min-height: 5.6rem;
+  margin: 0;
   padding: 0 2.4rem;
   display: inline-flex;
   align-items: center;
@@ -54,7 +54,7 @@
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease;
 }
 
-/* the moving light — same layer on both buttons */
+/* the moving light */
 .product-form__submit::after,
 .bp-buynow::after {
   content: '';
@@ -62,24 +62,25 @@
   top: -60%;
   bottom: -60%;
   left: -35%;
-  width: 28%;
-  border: 0;
-  border-radius: 0;
+  width: 26%;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.28) 35%,
-    rgba(255, 255, 255, 0.62) 50%,
-    rgba(255, 255, 255, 0.28) 65%,
+    rgba(255, 255, 255, 0.26) 35%,
+    rgba(255, 255, 255, 0.60) 50%,
+    rgba(255, 255, 255, 0.26) 65%,
     rgba(255, 255, 255, 0) 100%
   );
   transform: rotate(18deg);
   pointer-events: none;
   z-index: 1;
+  opacity: 1;
   animation: bp-sweep 3.6s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
 
-/* keep the label above the light */
 .product-form__submit > *,
 .bp-buynow > * {
   position: relative;
@@ -88,7 +89,7 @@
 
 @keyframes bp-sweep {
   0%   { left: -35%; }
-  60%  { left: 115%; }
+  55%  { left: 115%; }
   100% { left: 115%; }
 }
 
@@ -105,7 +106,7 @@
   ) !important;
   background-color: #F2D14E !important;
   color: #2A2410 !important;
-  box-shadow: 0 4px 16px rgba(226, 182, 43, 0.34) !important;
+  box-shadow: 0 4px 16px rgba(226, 182, 43, 0.30) !important;
   animation: bp-glow-gold 3.6s ease-in-out infinite;
 }
 
@@ -115,7 +116,7 @@
 
 @keyframes bp-glow-gold {
   0%, 100% { box-shadow: 0 4px 16px rgba(226, 182, 43, 0.30); }
-  50%      { box-shadow: 0 6px 26px rgba(226, 182, 43, 0.52); }
+  50%      { box-shadow: 0 7px 28px rgba(226, 182, 43, 0.55); }
 }
 
 /* ---------- Buy now: matcha ---------- */
@@ -130,7 +131,7 @@
   );
   background-color: #5C7A2F;
   color: #F7FBEE;
-  box-shadow: 0 4px 16px rgba(92, 122, 47, 0.32);
+  box-shadow: 0 4px 16px rgba(92, 122, 47, 0.28);
   animation: bp-glow-matcha 3.6s ease-in-out infinite;
   animation-delay: 1.8s;
 }
@@ -139,11 +140,14 @@
   animation-delay: 1.8s;
 }
 
-.bp-buynow:visited { color: #F7FBEE; }
+.bp-buynow:visited,
+.bp-buynow:hover {
+  color: #F7FBEE;
+}
 
 @keyframes bp-glow-matcha {
   0%, 100% { box-shadow: 0 4px 16px rgba(92, 122, 47, 0.28); }
-  50%      { box-shadow: 0 6px 26px rgba(92, 122, 47, 0.48); }
+  50%      { box-shadow: 0 7px 28px rgba(92, 122, 47, 0.50); }
 }
 
 /* ---------- interaction ---------- */
