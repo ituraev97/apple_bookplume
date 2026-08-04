@@ -17,7 +17,7 @@
         "m0": {
           "type": "message",
           "settings": {
-            "text": "August Sale \u2014 15% off everything with code",
+            "text": "August Sale — 15% off everything with code  (after discounts)",
             "code": "AUGUST15",
             "link": "shopify://collections/all"
           }
