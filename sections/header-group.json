@@ -17,15 +17,15 @@
         "m0": {
           "type": "message",
           "settings": {
-            "text": "August Sale — 15% off everything with code  (after discounts)",
+            "text": "August Sale \u2014 15% off everything with code",
             "code": "AUGUST15",
-            "link": ""
+            "link": "shopify://collections/all"
           }
         },
         "m1": {
           "type": "message",
           "settings": {
-            "text": "Free shipping on US orders over $49",
+            "text": "Free shipping on US orders $49+ (after discounts)",
             "code": "",
             "link": ""
           }
