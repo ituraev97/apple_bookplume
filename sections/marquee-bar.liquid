@@ -26,7 +26,8 @@
     flex-shrink: 0;
   }
 
-  .bp-marquee__item {
+  .bp-marquee__track a.bp-marquee__item,
+  .bp-marquee__track span.bp-marquee__item {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
@@ -34,6 +35,7 @@
     font-family: 'IBM Plex Mono', 'Inter', monospace;
     font-size: 1.2rem;
     font-weight: 500;
+    line-height: 1;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     white-space: nowrap;
@@ -50,7 +52,7 @@
     flex-shrink: 0;
   }
 
-  .bp-marquee__code {
+  .bp-marquee__track .bp-marquee__code {
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 3px;
