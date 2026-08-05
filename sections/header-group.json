@@ -29,11 +29,20 @@
             "code": "",
             "link": ""
           }
+        },
+        "m2": {
+          "type": "message",
+          "settings": {
+            "text": "Worldwide shipping on orders over $45",
+            "code": "",
+            "link": "shopify://policies/shipping-policy"
+          }
         }
       },
       "block_order": [
         "m0",
-        "m1"
+        "m1",
+        "m2"
       ],
       "settings": {
         "color_scheme": "scheme-4",
@@ -52,7 +61,7 @@
         "show_line_separator": true,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
-        "enable_country_selector": false,
+        "enable_country_selector": true,
         "enable_language_selector": false,
         "enable_customer_avatar": true,
         "margin_bottom": 0,
