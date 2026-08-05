@@ -143,6 +143,8 @@
               {%- case block.settings.icon -%}
                 {%- when 'truck' -%}
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 7h11v10H2zM13 10h4l4 4v3h-8z"/><circle cx="6.5" cy="17.5" r="2"/><circle cx="17.5" cy="17.5" r="2"/></svg>
+                {%- when 'globe' -%}
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z"/></svg>
                 {%- when 'return' -%}
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10a9 9 0 1 1 2 6"/><path d="M3 5v5h5"/></svg>
                 {%- when 'lock' -%}
@@ -286,6 +288,7 @@
           "label": "Icon",
           "options": [
             { "value": "truck", "label": "Shipping truck" },
+            { "value": "globe", "label": "Globe" },
             { "value": "return", "label": "Returns arrow" },
             { "value": "lock", "label": "Secure lock" },
             { "value": "stack", "label": "Book stack" },
