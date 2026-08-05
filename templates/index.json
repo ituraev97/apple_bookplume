@@ -165,6 +165,13 @@
             "text": "<p>Orders ship from Edison, NJ within 1\u20132 business days.</p>"
           }
         },
+        "trust_4": {
+          "type": "column",
+          "settings": {
+            "title": "Worldwide shipping",
+            "text": "<p>We ship internationally on orders over $45, tracked with DHL Express.</p>"
+          }
+        },
         "trust_2": {
           "type": "column",
           "settings": {
@@ -182,6 +189,7 @@
       },
       "block_order": [
         "trust_1",
+        "trust_4",
         "trust_2",
         "trust_3"
       ],
@@ -191,7 +199,7 @@
         "image_width": "full",
         "image_ratio": "square",
         "button_label": "",
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "column_alignment": "center",
         "background_style": "none",
         "color_scheme": "scheme-4",
@@ -214,8 +222,8 @@
         "stat_2": {
           "type": "column",
           "settings": {
-            "title": "7",
-            "text": "<p>Curated categories, hand-sorted so you find the right book faster.</p>"
+            "title": "90+",
+            "text": "<p>Countries we ship to, from Canada and the UK to Australia and the Gulf.</p>"
           }
         },
         "stat_3": {
