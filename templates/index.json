@@ -1,10 +1,6 @@
 /*
  * ------------------------------------------------------------
  * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
 {
@@ -38,11 +34,7 @@
           }
         }
       },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
+      "block_order": ["heading", "text", "button"],
       "settings": {
         "image_overlay_opacity": 0,
         "image_height": "medium",
@@ -98,54 +90,13 @@
     "category_tiles": {
       "type": "category-tiles",
       "blocks": {
-        "t1": {
-          "type": "tile",
-          "settings": {
-            "collection": "anatomy-education",
-            "label": "Anatomy & medical",
-            "art": "anatomy"
-          }
-        },
-        "t2": {
-          "type": "tile",
-          "settings": {
-            "collection": "stress-relief-coloring",
-            "label": "Coloring & journals",
-            "art": "coloring"
-          }
-        },
-        "t3": {
-          "type": "tile",
-          "settings": {
-            "collection": "bible-christian-trivia",
-            "label": "Bible & faith",
-            "art": "bible"
-          }
-        },
-        "t4": {
-          "type": "tile",
-          "settings": {
-            "collection": "libros-en-espanol",
-            "label": "Libros en Español",
-            "art": "spanish"
-          }
-        },
-        "t5": {
-          "type": "tile",
-          "settings": {
-            "collection": "boxed-sets-series",
-            "label": "Boxed sets",
-            "art": "boxed"
-          }
-        }
+        "t1": { "type": "tile", "settings": { "collection": "anatomy-education", "label": "Anatomy & medical", "art": "anatomy" } },
+        "t2": { "type": "tile", "settings": { "collection": "stress-relief-coloring", "label": "Coloring & journals", "art": "coloring" } },
+        "t3": { "type": "tile", "settings": { "collection": "bible-christian-trivia", "label": "Bible & faith", "art": "bible" } },
+        "t4": { "type": "tile", "settings": { "collection": "libros-en-espanol", "label": "Libros en Espa\u00f1ol", "art": "spanish" } },
+        "t5": { "type": "tile", "settings": { "collection": "boxed-sets-series", "label": "Boxed sets", "art": "boxed" } }
       },
-      "block_order": [
-        "t1",
-        "t2",
-        "t3",
-        "t4",
-        "t5"
-      ],
+      "block_order": ["t1", "t2", "t3", "t4", "t5"],
       "settings": {
         "title": "Shop by category",
         "heading_size": "h1",
@@ -158,41 +109,12 @@
     "trust_bar": {
       "type": "multicolumn",
       "blocks": {
-        "trust_1": {
-          "type": "column",
-          "settings": {
-            "title": "Fast US shipping",
-            "text": "<p>Orders ship from Edison, NJ within 1\u20132 business days.</p>"
-          }
-        },
-        "trust_4": {
-          "type": "column",
-          "settings": {
-            "title": "Worldwide shipping",
-            "text": "<p>We ship internationally on orders over $45, tracked with DHL Express.</p>"
-          }
-        },
-        "trust_2": {
-          "type": "column",
-          "settings": {
-            "title": "Easy returns",
-            "text": "<p>Not the right fit? Send it back \u2014 see our return policy for details.</p>"
-          }
-        },
-        "trust_3": {
-          "type": "column",
-          "settings": {
-            "title": "Secure checkout",
-            "text": "<p>Every payment is encrypted and processed through Shopify Payments.</p>"
-          }
-        }
+        "trust_1": { "type": "column", "settings": { "title": "Fast US shipping", "text": "<p>Orders ship from Edison, NJ within 1\u20132 business days.</p>" } },
+        "trust_4": { "type": "column", "settings": { "title": "Worldwide shipping", "text": "<p>We ship internationally on orders over $45, tracked with DHL Express.</p>" } },
+        "trust_2": { "type": "column", "settings": { "title": "Easy returns", "text": "<p>Not the right fit? Send it back \u2014 see our return policy for details.</p>" } },
+        "trust_3": { "type": "column", "settings": { "title": "Secure checkout", "text": "<p>Every payment is encrypted and processed through Shopify Payments.</p>" } }
       },
-      "block_order": [
-        "trust_1",
-        "trust_4",
-        "trust_2",
-        "trust_3"
-      ],
+      "block_order": ["trust_1", "trust_4", "trust_2", "trust_3"],
       "settings": {
         "title": "",
         "heading_size": "h2",
@@ -212,33 +134,11 @@
     "stats": {
       "type": "multicolumn",
       "blocks": {
-        "stat_1": {
-          "type": "column",
-          "settings": {
-            "title": "480+",
-            "text": "<p>Titles in stock \u2014 study guides, coloring books, Bibles and more.</p>"
-          }
-        },
-        "stat_2": {
-          "type": "column",
-          "settings": {
-            "title": "90+",
-            "text": "<p>Countries we ship to, from Canada and the UK to Australia and the Gulf.</p>"
-          }
-        },
-        "stat_3": {
-          "type": "column",
-          "settings": {
-            "title": "2",
-            "text": "<p>Languages \u2014 English and Spanish editions, side by side.</p>"
-          }
-        }
+        "stat_1": { "type": "column", "settings": { "title": "480+", "text": "<p>Titles in stock \u2014 study guides, coloring books, Bibles and more.</p>" } },
+        "stat_2": { "type": "column", "settings": { "title": "90+", "text": "<p>Countries we ship to, from Canada and the UK to Australia and the Gulf.</p>" } },
+        "stat_3": { "type": "column", "settings": { "title": "2", "text": "<p>Languages \u2014 English and Spanish editions, side by side.</p>" } }
       },
-      "block_order": [
-        "stat_1",
-        "stat_2",
-        "stat_3"
-      ],
+      "block_order": ["stat_1", "stat_2", "stat_3"],
       "settings": {
         "title": "A shelf worth browsing.",
         "heading_size": "h1",
@@ -253,7 +153,16 @@
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 40
+      }
+    },
+    "publishers": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>.bp-pub{padding:0 0 8px;text-align:center}.bp-pub__eyebrow{font-size:1.2rem;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin:0 0 1.6rem}.bp-pub__wrap{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}.bp-pub__track{display:flex;width:max-content;gap:3.5rem;animation:bp-pub-scroll 42s linear infinite}.bp-pub__wrap:hover .bp-pub__track{animation-play-state:paused}.bp-pub__item{font-family:var(--font-heading-family);font-size:1.9rem;font-weight:600;letter-spacing:-.01em;white-space:nowrap;opacity:.72}.bp-pub__note{font-size:1.25rem;opacity:.6;margin:1.8rem 0 0;line-height:1.5}@keyframes bp-pub-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.bp-pub__track{animation:none}}</style><div class=\"bp-pub page-width\"><p class=\"bp-pub__eyebrow\">Publishers we stock</p><div class=\"bp-pub__wrap\"><div class=\"bp-pub__track\"><span class=\"bp-pub__item\">Penguin Random House</span><span class=\"bp-pub__item\">Simon &amp; Schuster</span><span class=\"bp-pub__item\">DK</span><span class=\"bp-pub__item\">HarperCollins</span><span class=\"bp-pub__item\">Zondervan</span><span class=\"bp-pub__item\">Thomas Nelson</span><span class=\"bp-pub__item\">Tyndale House</span><span class=\"bp-pub__item\">Scholastic</span><span class=\"bp-pub__item\">Bloomsbury</span><span class=\"bp-pub__item\">Cambridge University Press</span><span class=\"bp-pub__item\">Grove Press</span><span class=\"bp-pub__item\">Rocky Nook</span><span class=\"bp-pub__item\" aria-hidden=\"true\">Penguin Random House</span><span class=\"bp-pub__item\" aria-hidden=\"true\">Simon &amp; Schuster</span><span class=\"bp-pub__item\" aria-hidden=\"true\">DK</span><span class=\"bp-pub__item\" aria-hidden=\"true\">HarperCollins</span><span class=\"bp-pub__item\" aria-hidden=\"true\">Zondervan</span><span class=\"bp-pub__item\" aria-hidden=\"true\">Thomas Nelson</span><span class=\"bp-pub__item\" aria-hidden=\"true\">Tyndale House</span><span class=\"bp-pub__item\" aria-hidden=\"true\">Scholastic</span><span class=\"bp-pub__item\" aria-hidden=\"true\">Bloomsbury</span><span class=\"bp-pub__item\" aria-hidden=\"true\">Cambridge University Press</span><span class=\"bp-pub__item\" aria-hidden=\"true\">Grove Press</span><span class=\"bp-pub__item\" aria-hidden=\"true\">Rocky Nook</span></div></div><p class=\"bp-pub__note\">Sourced through authorized wholesale accounts with Simon &amp; Schuster, Ingram Content Group and Penguin Random House.</p></div>",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 56
       }
     },
     "featured_collection": {
@@ -292,6 +201,7 @@
     "category_tiles",
     "trust_bar",
     "stats",
+    "publishers",
     "featured_collection"
   ]
 }
