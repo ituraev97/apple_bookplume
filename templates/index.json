@@ -8,20 +8,8 @@
     "image_banner": {
       "type": "image-banner",
       "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Books people actually open.",
-            "heading_size": "hxl"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "Study guides that get you through finals. Coloring pages that get you through Tuesday. Bibles that get you through anything.",
-            "text_style": "body"
-          }
-        },
+        "heading": { "type": "heading", "settings": { "heading": "Books people actually open.", "heading_size": "hxl" } },
+        "text": { "type": "text", "settings": { "text": "Study guides that get you through finals. Coloring pages that get you through Tuesday. Bibles that get you through anything.", "text_style": "body" } },
         "button": {
           "type": "buttons",
           "settings": {
@@ -134,9 +122,9 @@
     "stats": {
       "type": "multicolumn",
       "blocks": {
-        "stat_1": { "type": "column", "settings": { "title": "480+", "text": "<p>Titles in stock \u2014 study guides, coloring books, Bibles and more.</p>" } },
-        "stat_2": { "type": "column", "settings": { "title": "90+", "text": "<p>Countries we ship to, from Canada and the UK to Australia and the Gulf.</p>" } },
-        "stat_3": { "type": "column", "settings": { "title": "2", "text": "<p>Languages \u2014 English and Spanish editions, side by side.</p>" } }
+        "stat_1": { "type": "column", "settings": { "title": "480+", "text": "<p>Titles on the shelf. Anatomy, coloring, faith and Libros en Espa\u00f1ol \u2014 no filler.</p>" } },
+        "stat_2": { "type": "column", "settings": { "title": "90+", "text": "<p>Countries we ship to. Yours is probably one of them.</p>" } },
+        "stat_3": { "type": "column", "settings": { "title": "30 days", "text": "<p>To change your mind. Unread and unmarked goes straight back.</p>" } }
       },
       "block_order": ["stat_1", "stat_2", "stat_3"],
       "settings": {
