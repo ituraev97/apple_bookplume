@@ -1,6 +1,10 @@
 /*
  * ------------------------------------------------------------
  * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
 {
@@ -15,13 +19,29 @@
             "text_style": "uppercase"
           }
         },
-        "title": { "type": "title", "settings": {} },
-        "price": { "type": "price", "settings": {} },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "judge_me_reviews_preview_badge_49eipd": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
         "variant_picker": {
           "type": "variant_picker",
-          "settings": { "picker_type": "button", "swatch_shape": "circle" }
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
         },
-        "quantity_selector": { "type": "quantity_selector", "settings": {} },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -31,23 +51,38 @@
         },
         "buy_now": {
           "type": "custom_liquid",
-          "settings": { "custom_liquid": "{% render 'bp-buy-now' %}" }
+          "settings": {
+            "custom_liquid": "{% render 'bp-buy-now' %}"
+          }
         },
         "promo_inline": {
           "type": "custom_liquid",
-          "settings": { "custom_liquid": "{% render 'product-promo-banner' %}" }
+          "settings": {
+            "custom_liquid": "{% render 'product-promo-banner' %}"
+          }
         },
-        "description": { "type": "description", "settings": {} },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
         "description_toggle": {
           "type": "custom_liquid",
-          "settings": { "custom_liquid": "{% render 'product-description-toggle' %}" }
+          "settings": {
+            "custom_liquid": "{% render 'product-description-toggle' %}"
+          }
         },
-        "share": { "type": "share", "settings": { "share_label": "Share" } }
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
       },
       "block_order": [
         "vendor",
         "title",
         "price",
+        "judge_me_reviews_preview_badge_49eipd",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
@@ -81,7 +116,7 @@
           "settings": {
             "icon": "truck",
             "title": "Fast US shipping",
-            "text": "Ships from Edison, NJ in 1\u20132 days"
+            "text": "Ships from Edison, NJ in 1–2 days"
           }
         },
         "b4": {
@@ -109,18 +144,23 @@
           }
         }
       },
-      "block_order": ["b1", "b4", "b2", "b3"],
+      "block_order": [
+        "b1",
+        "b4",
+        "b2",
+        "b3"
+      ],
       "settings": {
         "promo_badge": "",
         "promo_title": "",
         "promo_sub": "",
         "promo_link": "",
-        "promo_bg": "#5C7A2F",
-        "promo_text": "#F7FBEE",
-        "badge_bg": "#F2D14E",
-        "badge_text": "#2A2410",
-        "icon_bg": "#E6E9D2",
-        "icon_color": "#5C7A2F",
+        "promo_bg": "#5c7a2f",
+        "promo_text": "#f7fbee",
+        "badge_bg": "#f2d14e",
+        "badge_text": "#2a2410",
+        "icon_bg": "#e6e9d2",
+        "icon_color": "#5c7a2f",
         "color_scheme": "scheme-1",
         "padding_top": 8,
         "padding_bottom": 36
@@ -128,7 +168,14 @@
     },
     "disclosures": {
       "type": "disclosures",
-      "settings": { "padding_top": 24, "padding_bottom": 0 }
+      "settings": {
+        "heading": "Disclosures",
+        "heading_size": "h2",
+        "open_by_default": false,
+        "color_scheme": "",
+        "padding_top": 24,
+        "padding_bottom": 0
+      }
     },
     "related-products": {
       "type": "related-products",
@@ -147,7 +194,33 @@
         "padding_top": 48,
         "padding_bottom": 48
       }
+    },
+    "17859696743e56cde6": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_LbUpKU": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_LbUpKU"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
-  "order": ["main", "product_promo", "disclosures", "related-products"]
+  "order": [
+    "main",
+    "product_promo",
+    "disclosures",
+    "17859696743e56cde6",
+    "related-products"
+  ]
 }
