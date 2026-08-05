@@ -45,7 +45,7 @@
         "color_scheme": "scheme-2",
         "newsletter_enable": true,
         "newsletter_heading": "Get first look at new arrivals",
-        "show_social": true,
+        "show_social": false,
         "payment_enable": true,
         "show_policy": false,
         "margin_top": 0,
