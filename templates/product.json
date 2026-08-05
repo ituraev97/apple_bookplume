@@ -84,6 +84,14 @@
             "text": "Ships from Edison, NJ in 1\u20132 days"
           }
         },
+        "b4": {
+          "type": "badge",
+          "settings": {
+            "icon": "globe",
+            "title": "Worldwide shipping",
+            "text": "90+ countries on orders over $45"
+          }
+        },
         "b2": {
           "type": "badge",
           "settings": {
@@ -99,17 +107,9 @@
             "title": "Secure checkout",
             "text": "Encrypted payments"
           }
-        },
-        "b4": {
-          "type": "badge",
-          "settings": {
-            "icon": "stack",
-            "title": "480+ titles",
-            "text": "Curated book catalog"
-          }
         }
       },
-      "block_order": ["b1", "b2", "b3", "b4"],
+      "block_order": ["b1", "b4", "b2", "b3"],
       "settings": {
         "promo_badge": "",
         "promo_title": "",
